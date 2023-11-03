@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Login - HelpDesk Kabupaten Pesawaran</title>
+    <title>Register - HelpDesk Kabupaten Pesawaran</title>
     <!-- File Framework -->
     <link rel="stylesheet" href="<?php base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php base_url() ?>/assets/css/all.min.css">
@@ -41,13 +41,32 @@
     </div>
     <!--============= Hero Section Ends Here =============-->
 
-    <!--============= Form Login Section Starts Here =============-->
+    <!--============= Form Register Section Starts Here =============-->
     <div class="login-section mb-100">
         <div class="container">
             <div class="login-wrapper shadow">
                 <div class="login-content">
                     <h2 class="title">HelpDesk Center</h2>
+                    <p align="center">Register</p>
                     <form action="#" class="login100-form validate-form">
+
+                        <div class="wrap-input100 validate-input" data-validate = "Nama Lengkap Wajib Diisi">
+                            <input class="input100" type="text" name="username" id="username" placeholder="Nama Lengkap">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate = "No HP Wajib Diisi">
+                            <!-- max input no hp = 13 angka-->
+                            <input class="input100" type="text" name="no_hp" id="no_hp" placeholder="Nomor Handphone" 
+                            maxlength="13" onkeypress="return hanyaAngka(event)">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </span>
+                        </div>
 
                         <div class="wrap-input100 validate-input" data-validate = "Masukkan Email Valid: contoh@email.com">
                             <input class="input100" type="text" name="email" id="email" placeholder="Email">
@@ -66,18 +85,17 @@
                         </div>
                         
                         <div class="container-login100-form-btn">
-                            <small><a href="#!" class="forgot-button">Lupa Password?</a></small><br>
-                            <button type="submit" class="login100-form-btn login-button">Login</button>
+                            <button type="submit" class="login100-form-btn login-button">Kirim</button>
                         </div>    
 
 				    </form>
-                    <small class="d-sm">Belum memiliki akun? <br> Silahkan klik <a href="<?php base_url()?>/registrasi" class="regis-button">Disini</a></small>
+                    <small class="d-sm">Sudah memiliki akun? <br> Silahkan <a href="<?php base_url()?>/login_sistem" class="regis-button">Login</a></small>
                 </div>
-                <small class="d-lg" style="float: right;">Belum memiliki akun? Silahkan klik <a href="<?php base_url()?>/registrasi" class="regis-button">Disini</a></small>
+                <small class="d-lg" style="float: right;">Sudah memiliki akun? Silahkan <a href="<?php base_url()?>/login_sistem" class="regis-button">Login</a></small>
             </div>
         </div>
     </div>
-    <!--============= Form Login Section Ends Here =============-->
+    <!--============= Form Register Section Ends Here =============-->
 
     <!-- JS -->
     <script src="<?php base_url() ?>/assets/js/jquery-3.3.1.min.js"></script>
@@ -90,6 +108,16 @@
     <script src="<?php base_url() ?>/assets/js/owl.min.js"></script>
     <script src="<?php base_url() ?>/assets/js/magnific-popup.min.js"></script>
     <script src="<?php base_url() ?>/assets/js/main.js"></script>
+    <!-- Script -->
+    <script>
+        // Mengambil inputan keyboard yang hanya angka tanpa huruf & karakter
+        function hanyaAngka(event) {
+            var angka = (event.which) ? event.which : event.keyCode
+            if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+                return false;
+            return true;
+        }
+    </script>
 </body>
 
 </html>
