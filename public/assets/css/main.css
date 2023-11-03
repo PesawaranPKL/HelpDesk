@@ -850,7 +850,7 @@ input {
 }
 
 input:focus {
-    border: 1px solid #ff8a00;
+    border: 1px solid #5900FF;
 }
 
 input[type="submit"] {
@@ -1258,6 +1258,10 @@ input[type="submit"] {
     margin-bottom: 120px;
 }
 
+.mb-100 {
+    margin-bottom: 100px;
+}
+
 .mb--50 {
     margin-bottom: -50px;
 }
@@ -1389,8 +1393,8 @@ input[type="submit"] {
     margin-top: -187px;
 }
 
-.mt--250 {
-    margin-top: -250px;
+.mt--300 {
+    margin-top: -300px;
 }
 
 .transparent {
@@ -3020,6 +3024,145 @@ footer {
     top: 0;
     position: absolute;
 }
+
+/*Login Starts Here*/
+.login-section {
+    margin-top: -315px;
+}
+
+.login-content .title {
+    margin-bottom: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-content p {
+    margin-bottom: 0;
+}
+
+.login-wrapper {
+    padding: 0 20px 65px 10px;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 55%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login-content {
+    padding: 25px 60px 60px;
+}
+
+.login-wrapper .regis-button {
+    color: #5900ff;
+    border: 1px solid #5900ff;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 1.5px 10px 0;
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.login-wrapper .regis-button:hover {
+    color: #fff;
+    background-color: #5900ff;
+    border-color: #5900ff;
+}
+
+.login-wrapper .forgot-button {
+    color: #504c89;
+    padding-top:5px
+}
+
+.login-wrapper .forgot-button:hover {
+    color: #5900ff;
+}
+
+.login-wrapper .login-button {
+    color: #ffffff;
+    border: 1px solid #5900ff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 12px 50px 6px;
+    font-size: 20px;
+    background: #5900ff;
+    width: 35%;
+    margin-top: 10px;
+    float: right;
+}
+
+.login-wrapper .login-button:hover {
+    color: #5900ff;
+    background-color: #ffffff;
+    border-color: #5900ff;
+}
+
+.d-sm {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .login-content .title {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 992px) { 
+    .login-wrapper {
+        width: 80%;
+    }
+
+    .login-wrapper .login-button {
+        width: 80%;
+    }
+
+    .login-section {
+        margin-top: -250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 575px) {   
+    .login-wrapper {
+        padding: 25px 15px 40px;
+        width: 90%;
+    }
+
+    .login-wrapper .login-button {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .login-content {
+        padding: 15px;
+    }
+
+    .d-sm {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .d-lg {
+        display: none;
+    }
+}
+
+/*Login End Here*/
 
 /*Have Question Starts Here*/
 .have-question-content .title {
@@ -5058,3 +5201,151 @@ footer {
         opacity: 0;
     }
 }
+
+/* FORM */
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+  }
+  
+  .login100-form {
+    margin-top: 35px;
+    margin-bottom: 50px;
+  }
+
+  .wrap-input100 {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-top: 10px;
+  }
+  
+  .input100 {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+  
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    padding: 0 30px 0 68px;
+  }
+  
+  .symbol-input100 {
+    font-size: 15px;
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 35px;
+    pointer-events: none;
+    color: #666666;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .input100:focus + .focus-input100 + .symbol-input100 {
+    color: #5900FF;
+    padding-left: 28px;
+  }
+    
+  /*------------------------------------------------------------------
+  [ Alert validate ]*/
+  
+  .validate-input {
+    position: relative;
+  }
+  
+  .alert-validate::before {
+    content: attr(data-validate);
+    position: absolute;
+    max-width: 70%;
+    background-color: white;
+    border: 1px solid #c80000;
+    border-radius: 13px;
+    padding: 4px 25px 4px 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 8px;
+    pointer-events: none;
+  
+    color: #c80000;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+  
+    visibility: hidden;
+    opacity: 0;
+  
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+  }
+  
+  .alert-validate::after {
+    content: "\f06a";
+    font-family: FontAwesome;
+    display: block;
+    position: absolute;
+    color: #c80000;
+    font-size: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 13px;
+  }
+  
+  .alert-validate:hover:before {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  @media (max-width: 992px) {
+    .alert-validate::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
