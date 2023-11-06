@@ -37,11 +37,25 @@
                             </span>
                         </div>
 
-                        <div class="wrap-input100 validate-input" data-validate = "Password Wajib Diisi">
-                            <input class="input100" type="password" name="pw" id="pw" placeholder="Password">
+                        <div class="wrap-input100 validate-input pw" data-validate = "Password Wajib Diisi">
+                            <input class="input100" type="password" name="pw_regist" id="pw_regist" placeholder="Password">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="input-group-append">
+                
+                            <!-- Untuk merubah icon buka/tutup mata setiap diklik  -->
+                            <span id="eyebuttonR" onclick="changeR()" class="input-group-text">
+
+                                <!-- Icon mata bawaan bootstrap  -->
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                </svg>
                             </span>
                         </div>
                         

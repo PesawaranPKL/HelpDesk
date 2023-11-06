@@ -55,31 +55,6 @@
     <script src="<?php base_url() ?>/assets/js/magnific-popup.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="<?php base_url() ?>/assets/js/main.js"></script>
-    <!-- Script -->
-    <script>
-        // Mengambil inputan keyboard yang hanya angka tanpa huruf & karakter
-        function hanyaAngka(event) {
-            var angka = (event.which) ? event.which : event.keyCode
-            if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
-                return false;
-            return true;
-        }
-    </script>
-    <script type="text/javascript">
-        // Validasi Mencocokkan Form Password Baru dengan Konfirmasi Password Baru
-        window.onload = function () {
-            document.getElementById("pw_baru").onchange = validatePassword;
-            document.getElementById("knfr_pw_baru").onchange = validatePassword;
-        }
-        function validatePassword(){
-            var pass2=document.getElementById("knfr_pw_baru").value;
-            var pass1=document.getElementById("pw_baru").value;
-            if(pass1!=pass2)
-                document.getElementById("knfr_pw_baru").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
-            else
-                document.getElementById("knfr_pw_baru").setCustomValidity('');
-        }
-    </script>
 </body>
 
 </html>

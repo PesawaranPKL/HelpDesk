@@ -172,3 +172,136 @@
     });
   });
 })(jQuery);
+
+
+// Script
+    
+// Mengambil inputan keyboard yang hanya angka tanpa huruf & karakter
+function hanyaAngka(event) {
+  var angka = (event.which) ? event.which : event.keyCode
+  if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+      return false;
+  return true;
+}
+
+// Validasi Mencocokkan Form Password Baru dengan Konfirmasi Password Baru
+window.onload = function () {
+    document.getElementById("pw_baru").onchange = validatePassword;
+    document.getElementById("knfr_pw_baru").onchange = validatePassword;
+}
+function validatePassword(){
+    var pass2=document.getElementById("knfr_pw_baru").value;
+    var pass1=document.getElementById("pw_baru").value;
+    if(pass1!=pass2)
+        document.getElementById("knfr_pw_baru").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+    else
+        document.getElementById("knfr_pw_baru").setCustomValidity('');
+}
+
+// ID PW
+// membuat fungsi change icon mata untuk show/hide password
+function change() {
+    // membuat variabel berisi tipe input dari id='pw', id='pw' adalah form input password 
+    var x = document.getElementById('pw').type;
+    //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+    if (x == 'password') {
+        //ubah form input password menjadi text
+        document.getElementById('pw').type = 'text';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebutton').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
+        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+        </svg>`;
+    }
+    else {
+        //ubah form input password menjadi text
+        document.getElementById('pw').type = 'password';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebutton').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg>`;
+    }
+}
+
+// ID PW_REGIST
+// membuat fungsi change icon mata untuk show/hide password
+function changeR() {
+    // membuat variabel berisi tipe input dari id='pw_regist', id='pw_regist' adalah form input password 
+    var x = document.getElementById('pw_regist').type;
+    //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+    if (x == 'password') {
+        //ubah form input password menjadi text
+        document.getElementById('pw_regist').type = 'text';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebuttonR').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
+        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+        </svg>`;
+    }
+    else {
+        //ubah form input password menjadi text
+        document.getElementById('pw_regist').type = 'password';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebuttonR').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg>`;
+    }
+}
+    
+// ID PW_BARU
+// membuat fungsi change icon mata untuk show/hide password
+function changepwB() {
+    // membuat variabel berisi tipe input dari id='pw_baru', id='pw_baru' adalah form input password 
+    var y = document.getElementById('pw_baru').type;
+    //membuat if kondisi, jika tipe y adalah password maka jalankan perintah di bawahnya
+    if (y == 'password') {
+        //ubah form input password menjadi text
+        document.getElementById('pw_baru').type = 'text';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebutton_pwB').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
+        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+        </svg>`;
+    }
+    else {
+        //ubah form input password menjadi text
+        document.getElementById('pw_baru').type = 'password';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebutton_pwB').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg>`;
+    }
+}
+
+// ID KNFR_PW_BARU
+// membuat fungsi change icon mata untuk show/hide password
+function changepwK() {
+    // membuat variabel berisi tipe input dari id='knfr_pw_baru', id='knfr_pw_baru' adalah form input password 
+    var z = document.getElementById('knfr_pw_baru').type;
+    //membuat if kondisi, jika tipe z adalah password maka jalankan perintah di bawahnya
+    if (z == 'password') {
+        //ubah form input password menjadi text
+        document.getElementById('knfr_pw_baru').type = 'text';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebutton_pwK').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
+        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+        </svg>`;
+    }
+    else {
+        //ubah form input password menjadi text
+        document.getElementById('knfr_pw_baru').type = 'password';
+        //ubah icon mata terbuka menjadi tertutup
+        document.getElementById('eyebutton_pwK').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg>`;
+    }
+}

@@ -3135,9 +3135,20 @@ footer {
     font-size: 30px;
 }
 
+.login-wrapper .pw {
+    width: 90%;
+}
+
 @media (min-width: 768px) {
     .login-content .title {
         margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 992px) {
+
+    .login-wrapper .pw {
+        width: 87%;
     }
 }
 
@@ -3167,11 +3178,19 @@ footer {
     .login-section {
         margin-top: -250px;
     }
+
+    .login-wrapper .pw {
+        width: 87%;
+    }
 }
 
 @media (max-width: 768px) {
     .login-wrapper {
         width: 90%;
+    }
+
+    .login-wrapper .pw {
+        width: 85%;
     }
 }
 
@@ -3198,7 +3217,17 @@ footer {
     .d-lg {
         display: none;
     }
+
+    .login-wrapper .pw {
+        width: 88%;
+    }
 }
+
+@media (max-width: 435px) { 
+
+    .login-wrapper .pw {
+        width: 83%;
+    }  }
 
 /*Login End Here*/
 
@@ -5387,3 +5416,7 @@ footer {
       opacity: 1;
     }
   }
+
+.input-group-append {
+    float: right; margin-top:-50px; height:50px; cursor:pointer;
+}
