@@ -187,17 +187,18 @@ function hanyaAngka(event) {
 // Validasi Mencocokkan Form Password Baru dengan Konfirmasi Password Baru
 window.onload = function () {
     document.getElementById("pw_baru").onchange = validatePassword;
-    document.getElementById("knfr_pw_baru").onchange = validatePassword;
+    document.getElementById("kpw_baru").onchange = validatePassword;
 }
 function validatePassword(){
-    var pass2=document.getElementById("knfr_pw_baru").value;
+    var pass2=document.getElementById("kpw_baru").value;
     var pass1=document.getElementById("pw_baru").value;
     if(pass1!=pass2)
-        document.getElementById("knfr_pw_baru").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+        document.getElementById("kpw_baru").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
     else
-        document.getElementById("knfr_pw_baru").setCustomValidity('');
+        document.getElementById("kpw_baru").setCustomValidity('');
 }
 
+// Halaman Login
 // ID PW
 // membuat fungsi change icon mata untuk show/hide password
 function change() {
@@ -225,6 +226,7 @@ function change() {
     }
 }
 
+// Halaman Registrasi
 // ID PW_REGIST
 // membuat fungsi change icon mata untuk show/hide password
 function changeR() {
@@ -251,57 +253,29 @@ function changeR() {
         </svg>`;
     }
 }
-    
-// ID PW_BARU
-// membuat fungsi change icon mata untuk show/hide password
-function changepwB() {
-    // membuat variabel berisi tipe input dari id='pw_baru', id='pw_baru' adalah form input password 
+
+// Halaman Update Password
+// ID PW_BARU & KPW_BARU
+// membuat fungsi change icon checklist untuk show/hide password
+function changeBaru() {
+    // membuat variabel berisi tipe input dari id='pw_baru dan kpw_baru', id='pw_baru dan kpw_baru' adalah form input password 
     var y = document.getElementById('pw_baru').type;
+    var z = document.getElementById('kpw_baru').type;
     //membuat if kondisi, jika tipe y adalah password maka jalankan perintah di bawahnya
     if (y == 'password') {
         //ubah form input password menjadi text
         document.getElementById('pw_baru').type = 'text';
-        //ubah icon mata terbuka menjadi tertutup
-        document.getElementById('eyebutton_pwB').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
-        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
-        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+        document.getElementById('kpw_baru').type = 'text';
+        //ubah icon checklist terisi
+        document.getElementById('checkbutton').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Zm11.95 6.796a1 1 0 0 0-1.414-1.415l-4.95 4.95l-2.121-2.121a1 1 0 1 0-1.415 1.414l2.758 2.758a1.1 1.1 0 0 0 1.556 0l5.586-5.586Z"/></g></svg>
         </svg>`;
     }
     else {
         //ubah form input password menjadi text
         document.getElementById('pw_baru').type = 'password';
-        //ubah icon mata terbuka menjadi tertutup
-        document.getElementById('eyebutton_pwB').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-        </svg>`;
-    }
-}
-
-// ID KNFR_PW_BARU
-// membuat fungsi change icon mata untuk show/hide password
-function changepwK() {
-    // membuat variabel berisi tipe input dari id='knfr_pw_baru', id='knfr_pw_baru' adalah form input password 
-    var z = document.getElementById('knfr_pw_baru').type;
-    //membuat if kondisi, jika tipe z adalah password maka jalankan perintah di bawahnya
-    if (z == 'password') {
-        //ubah form input password menjadi text
-        document.getElementById('knfr_pw_baru').type = 'text';
-        //ubah icon mata terbuka menjadi tertutup
-        document.getElementById('eyebutton_pwK').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
-        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
-        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
-        </svg>`;
-    }
-    else {
-        //ubah form input password menjadi text
-        document.getElementById('knfr_pw_baru').type = 'password';
-        //ubah icon mata terbuka menjadi tertutup
-        document.getElementById('eyebutton_pwK').innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        document.getElementById('kpw_baru').type = 'password';
+        //ubah icon checklist tidak terisi
+        document.getElementById('checkbutton').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Zm0 2h14v14H5V5Zm11.95 4.795a1 1 0 1 0-1.414-1.414l-4.95 4.95l-2.121-2.121a1 1 0 0 0-1.415 1.414l2.758 2.758a1.1 1.1 0 0 0 1.556 0l5.586-5.587Z"/></g></svg>
         </svg>`;
     }
 }
