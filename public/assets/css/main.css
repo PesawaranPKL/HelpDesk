@@ -3085,6 +3085,11 @@ footer {
     color: #5900ff;
 }
 
+.login-wrapper .login-button{
+    float: right;
+    width: 35%;
+}
+
 .login-wrapper .login-button {
     color: #ffffff;
     border: 1px solid #5900ff;
@@ -3096,9 +3101,7 @@ footer {
     padding: 12px 50px 6px;
     font-size: 20px;
     background: #5900ff;
-    width: 35%;
     margin-top: 10px;
-    float: right;
 }
 
 .login-wrapper .login-button:hover {
@@ -3117,13 +3120,27 @@ footer {
     }
 }
 
+@media (min-width: 992px) {
+    .login-wrapper .reset-button{
+        width: 55%;
+    }
+
+    .login-wrapper .login-button {
+        width: 45%;
+    }
+}
+
 @media (max-width: 992px) { 
     .login-wrapper {
         width: 80%;
     }
 
     .login-wrapper .login-button {
-        width: 80%;
+        width: 50%;
+    }
+
+    .login-wrapper .reset-button {
+        width: 65%;
     }
 
     .login-section {
@@ -3143,7 +3160,7 @@ footer {
         width: 90%;
     }
 
-    .login-wrapper .login-button {
+    .login-wrapper .login-button, .login-wrapper .reset-button {
         margin-bottom: 20px;
         width: 100%;
     }
