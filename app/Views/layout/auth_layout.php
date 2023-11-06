@@ -53,6 +53,7 @@
     <script src="<?php base_url() ?>/assets/js/nice-select.js"></script>
     <script src="<?php base_url() ?>/assets/js/owl.min.js"></script>
     <script src="<?php base_url() ?>/assets/js/magnific-popup.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="<?php base_url() ?>/assets/js/main.js"></script>
     <!-- Script -->
     <script>

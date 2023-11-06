@@ -7,10 +7,12 @@
         <div class="container">
             <div class="login-wrapper shadow lp_pw">
                 <div class="login-content">
+                    <a href="<?php base_url()?>/login_sistem" title="Kembali ke Halaman Login" class="iback"><iconify-icon icon="maki:arrow" flip="horizontal"></iconify-icon></a>
                     <h2 class="title">HelpDesk</h2>
-                    <p align="center">Lupa Password</p>
+                    <p align="center">Lupa Password</p><br>
                     <form action="#" class="login100-form validate-form">
 
+                        <p align="center">Silahkan masukkan email terdaftar untuk melakukan reset password</p>
                         <div class="wrap-input100 validate-input" data-validate = "Masukkan Email Valid: contoh@email.com">
                             <input class="input100" type="text" name="email" id="email" placeholder="Email">
                             <span class="focus-input100"></span>

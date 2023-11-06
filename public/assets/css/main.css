@@ -3122,6 +3122,15 @@ footer {
     display: none;
 }
 
+.iback {
+    color: #372C7A;
+    font-size: 25px;
+}
+
+.iback:hover {
+    font-size: 30px;
+}
+
 @media (min-width: 768px) {
     .login-content .title {
         margin-bottom: 8px;
