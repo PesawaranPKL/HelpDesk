@@ -3139,6 +3139,15 @@ footer {
     width: 90%;
 }
 
+.icheck span {
+    cursor: pointer;
+}
+
+.icheck label{
+    margin-top: 30px;
+    cursor: default;
+}
+
 @media (min-width: 768px) {
     .login-content .title {
         margin-bottom: 8px;
