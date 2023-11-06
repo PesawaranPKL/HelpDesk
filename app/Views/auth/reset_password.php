@@ -9,7 +9,7 @@
                 <div class="login-content">
                     <h2 class="title pt-3 pb-4">HelpDesk</h2>
                         
-                        <h4 align="center" class="pb-2">Reset Kata Sandi Berhasil</h4>
+                        <h4 align="center" class="pb-2">Reset Password Berhasil</h4>
                         <p align="center">Kami telah mengirimkan email berisi tautan untuk mengatur ulang kata sandi anda. Periksa surel anda dan ikuti petunjuk didalamnya</p><br>
 
                         <p align="center" class="pt-3">Tidak menerima email?</p>

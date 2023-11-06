@@ -27,4 +27,10 @@ class Auth extends BaseController
     {
         return view('auth/reset_password');
     }
+
+    // Halaman untuk melakukan perubahan password
+    public function pw_baru(): string
+    {
+        return view('auth/password_baru');
+    }
 }

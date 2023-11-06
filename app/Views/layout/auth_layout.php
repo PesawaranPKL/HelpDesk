@@ -65,6 +65,21 @@
             return true;
         }
     </script>
+    <script type="text/javascript">
+        // Validasi Mencocokkan Form Password Baru dengan Konfirmasi Password Baru
+        window.onload = function () {
+            document.getElementById("pw_baru").onchange = validatePassword;
+            document.getElementById("knfr_pw_baru").onchange = validatePassword;
+        }
+        function validatePassword(){
+            var pass2=document.getElementById("knfr_pw_baru").value;
+            var pass1=document.getElementById("pw_baru").value;
+            if(pass1!=pass2)
+                document.getElementById("knfr_pw_baru").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+            else
+                document.getElementById("knfr_pw_baru").setCustomValidity('');
+        }
+    </script>
 </body>
 
 </html>
