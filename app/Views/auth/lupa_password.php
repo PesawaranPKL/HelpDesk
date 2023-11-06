@@ -5,9 +5,9 @@
     <!--============= Form Login Section Starts Here =============-->
     <div class="login-section mb-100">
         <div class="container">
-            <div class="login-wrapper shadow lp_pw">
+            <div class="login-wrapper shadow">
                 <div class="login-content">
-                    <a href="<?php base_url()?>/login_sistem" title="Kembali ke Halaman Login" class="iback"><iconify-icon icon="maki:arrow" flip="horizontal"></iconify-icon></a>
+                    <!-- <a href="<?php base_url()?>/login_sistem" title="Kembali ke Halaman Login" class="iback"><iconify-icon icon="maki:arrow" flip="horizontal"></iconify-icon></a> -->
                     <h2 class="title">HelpDesk</h2>
                     <p align="center">Lupa Password</p><br>
                     <form action="#" class="login100-form validate-form">
@@ -26,7 +26,9 @@
                         </div>    
 
 				    </form>
+                    <small class="d-sm">Kembali kehalaman login? <br> Silahkan klik <a href="<?php base_url()?>/login_sistem" class="regis-button">Disini</a></small>
                 </div>
+                <small class="d-lg" style="float: right;">Kembali kehalaman login? Silahkan klik <a href="<?php base_url()?>/login_sistem" class="regis-button">Disini</a></small>
             </div>
         </div>
     </div>

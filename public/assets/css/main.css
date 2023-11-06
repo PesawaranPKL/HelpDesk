@@ -3098,7 +3098,11 @@ footer {
     width: 40%;
 }
 
-.login-wrapper .login-button, .login-wrapper .reset-button {
+.login-wrapper .lp-button {
+    width: 100%;
+}
+
+.login-wrapper .login-button, .login-wrapper .reset-button, .login-wrapper .lp-button {
     color: #ffffff;
     border: 1px solid #5900ff;
     -webkit-border-radius: 5px;
@@ -3112,7 +3116,7 @@ footer {
     margin-top: 10px;
 }
 
-.login-wrapper .login-button:hover, .login-wrapper .reset-button:hover {
+.login-wrapper .login-button:hover, .login-wrapper .reset-button:hover, .login-wrapper .lp-button:hover {
     color: #5900ff;
     background-color: #ffffff;
     border-color: #5900ff;
