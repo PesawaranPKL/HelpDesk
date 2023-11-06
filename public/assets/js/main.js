@@ -193,7 +193,7 @@ function validatePassword(){
     var pass2=document.getElementById("kpw_baru").value;
     var pass1=document.getElementById("pw_baru").value;
     if(pass1!=pass2)
-        document.getElementById("kpw_baru").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+        document.getElementById("kpw_baru").setCustomValidity("Password Tidak Sama, Silahkan Coba Lagi");
     else
         document.getElementById("kpw_baru").setCustomValidity('');
 }
