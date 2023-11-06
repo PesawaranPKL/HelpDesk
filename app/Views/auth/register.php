@@ -7,7 +7,7 @@
         <div class="container">
             <div class="login-wrapper shadow">
                 <div class="login-content">
-                    <h2 class="title">HelpDesk Center</h2>
+                    <h2 class="title">HelpDesk</h2>
                     <p align="center">Register</p>
                     <form action="#" class="login100-form validate-form">
 
