@@ -13,4 +13,9 @@ class Auth extends BaseController
     {
         return view('auth/register');
     }
+
+    public function lupa_pw(): string
+    {
+        return view('auth/lupa_password');
+    }
 }

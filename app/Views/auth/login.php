@@ -27,7 +27,7 @@
                         </div>
                         
                         <div class="container-login100-form-btn">
-                            <small><a href="#!" class="forgot-button">Lupa Password?</a></small><br>
+                            <small><a href="<?php base_url()?>/lupa_password" class="forgot-button">Lupa Password?</a></small><br>
                             <button type="submit" class="login100-form-btn login-button">Login</button>
                         </div>    
 

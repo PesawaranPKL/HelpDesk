@@ -3053,6 +3053,10 @@ footer {
     margin-left: auto;
 }
 
+.lp_pw {
+    padding: 0;
+}
+
 .login-content {
     padding: 25px 60px 60px;
 }
@@ -3090,7 +3094,11 @@ footer {
     width: 35%;
 }
 
-.login-wrapper .login-button {
+.login-wrapper .reset-button{
+    width: 40%;
+}
+
+.login-wrapper .login-button, .login-wrapper .reset-button {
     color: #ffffff;
     border: 1px solid #5900ff;
     -webkit-border-radius: 5px;
@@ -3104,7 +3112,7 @@ footer {
     margin-top: 10px;
 }
 
-.login-wrapper .login-button:hover {
+.login-wrapper .login-button:hover, .login-wrapper .reset-button:hover {
     color: #5900ff;
     background-color: #ffffff;
     border-color: #5900ff;
