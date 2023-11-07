@@ -20,79 +20,11 @@
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/LogoHelp.png" type="image/x-icon">
+
 </head>
-<script>
-    function sweet() {
-        Swal.fire(
-            'Gagal!',
-            'Akun tidak terdaftar!',
-            'error'
-        )
-    }
-</script>
-<?php if (session()->getFlashdata('login_err') == 'empty') { ?>
-    <script>
-        function sweet() {
-            Swal.fire(
-                'Gagal!',
-                'Akun tidak terdaftar!',
-                'error'
-            )
-        }
-    </script>
-<?php } ?>
-
-<?php if (session()->getFlashdata('login_err') == 'wrong_passwd') { ?>
-    <script>
-        function sweet() {
-            Swal.fire(
-                'Gagal!',
-                'Kata sandi tidak cocok!',
-                'error'
-            )
-        }
-    </script>
-<?php } ?>
-
-<?php if (session()->getFlashdata('login_err') == 'verif') { ?>
-    <script>
-        function sweet() {
-            Swal.fire(
-                'Gagal!',
-                'Email belum diverifikasi!',
-                'error'
-            )
-        }
-    </script>
-<?php } ?>
-
-<?php if (session()->getFlashdata('login_err') == 'not_actived') { ?>
-    <script>
-        function sweet() {
-            Swal.fire(
-                'Gagal!',
-                'Akun tersebut di non-aktifkan!',
-                'error'
-            )
-        }
-    </script>
-<?php } ?>
-
-<?php if (session()->getFlashdata('login_err') == 'limit') { ?>
-    <script>
-        function sweet() {
-            Swal.fire(
-                'Gagal!',
-                'Anda telah melakukan 5 kali percobaan, Coba lagi nanti!',
-                'error'
-            )
-        }
-    </script>
-<?php } ?>
 
 <body>
     <!--============= ScrollToTop Section Starts Here =============-->
-    <div class="sweet" onload="sweet()"></div>
     <div class="overlayer" id="overlayer">
         <div class="loader">
             <div class="loader-inner"></div>
@@ -126,7 +58,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
 

@@ -8,9 +8,27 @@
         <div class="login-wrapper shadow">
             <div class="login-content">
                 <h2 class="title">HelpDesk</h2>
-                <?= session()->get('role'); ?>
                 <form action="<?= htmlentities(base_url('login_sistem'), ENT_QUOTES) ?>" method="POST" class="login100-form validate-form">
-
+                    <?php csrf_field() ?>
+                    <?php if (session()->has('login_err')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php if (session()->get('login_err') == 'empty') : ?>
+                                Akun tidak terdaftar!
+                            <?php endif; ?>
+                            <?php if (session()->get('login_err') == 'wrong_passwd') : ?>
+                                Kata sandi tidak cocok!
+                            <?php endif; ?>
+                            <?php if (session()->get('login_err') == 'verif') : ?>
+                                Email belum diverifikasi!
+                            <?php endif; ?>
+                            <?php if (session()->get('login_err') == 'not_actived') : ?>
+                                Akun tersebut di non-aktifkan!
+                            <?php endif; ?>
+                            <?php if (session()->get('login_err') == 'limit') : ?>
+                                Anda telah melakukan 5 kali percobaan, Coba lagi nanti!
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="wrap-input100 validate-input" data-validate="Masukkan Email Valid: contoh@email.com">
                         <input class="input100 <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" type="text" name="email" id="email" placeholder="Email">
                         <span class="focus-input100"></span>
