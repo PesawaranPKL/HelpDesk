@@ -23,7 +23,7 @@ class Auth extends BaseController
     {
         $data['validation'] = Services::validation();
 
-        if (!$this->session->has('isLogin')) {
+        if ($this->session->has('isLogin') == false) {
             return view('auth/login', $data);
         }
         return redirect()->to('dashboard');
@@ -153,7 +153,7 @@ class Auth extends BaseController
     public function logout()
     {
         if (!$this->session->has('isLogin')) {
-            return redirect()->to('login_sistem');
+            return redirect()->to('/login_sistem');
         }
         session()->destroy();
         session()->setFlashdata('akun', 'logout');
