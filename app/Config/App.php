@@ -6,6 +6,15 @@ use CodeIgniter\Config\BaseConfig;
 
 class App extends BaseConfig
 {
+    public function __construct()
+    {
+        parent::__construct();
+        
+        // Setting locale
+        setlocale(LC_TIME, 'Indonesian_Indonesia.1252');
+		// setlocale(LC_TIME, 'id_ID.utf8');//server
+
+    }
     /**
      * --------------------------------------------------------------------------
      * Base Site URL
