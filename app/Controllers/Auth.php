@@ -77,8 +77,8 @@ class Auth extends BaseController
         }
 
         $data = $this->request->getPost();
-        $auth = $this->userModel->where('tabel_user.email', $data['email'])
-            ->join('user_details', 'user_details.email=tabel_user.email')
+        $auth = $this->userModel->where('user.email', $data['email'])
+            ->join('user_details', 'user_details.email=user.email')
             ->first();
 
         if ($auth) {
