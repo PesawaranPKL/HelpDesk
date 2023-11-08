@@ -18,12 +18,12 @@ class ChatBot extends Migration
             'id_anak_chat'           => [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
             'id_user'           => [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
             'name_chat'        => [
 				'type'           => 'VARCHAR',
@@ -31,7 +31,7 @@ class ChatBot extends Migration
 			],
             'type_chat'        => [
                 'type'           => 'ENUM',
-                'constraint'     => ['induk', 'anak'],
+                'constraint'     => ['induk', 'anak']
             ],
             'created_at DATETIME DEFAULT CURRENT_TIMESTAMP'            
 		]);

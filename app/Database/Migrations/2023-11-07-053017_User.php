@@ -11,11 +11,11 @@ class User extends Migration
         $this->forge->addField([
             'email'         => [
                 'type'           => 'VARCHAR',
-                'constraint'     => 50,
+                'constraint'     => 65
             ],
             'password'      => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '150'
+                'constraint'     => 150
             ],
             'role'          => [
                 'type'           => 'ENUM',

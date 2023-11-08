@@ -17,7 +17,7 @@ class UserDetails extends Migration
 			],
 			'email'     => [
 				'type'           => 'VARCHAR',
-				'constraint'     => 50
+				'constraint'     => 65
 			],
 			'nama'      => [
 				'type'           => 'VARCHAR',
