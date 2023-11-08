@@ -18,11 +18,11 @@ class RisetPassword extends Migration
             'id_user'           => [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
             'email_user'        => [
 				'type'           => 'VARCHAR',
-				'constraint'     => 50
+				'constraint'     => 65
 			],
             'token'             => [
 				'type'           => 'VARCHAR',

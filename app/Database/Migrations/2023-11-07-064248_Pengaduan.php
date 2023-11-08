@@ -18,12 +18,12 @@ class Pengaduan extends Migration
             'id_kategori'   => [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
 			'id_user'       => [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
             'nama_pengadu'  => [
 				'type'           => 'VARCHAR',
@@ -35,7 +35,7 @@ class Pengaduan extends Migration
 			],
             'email'         => [
 				'type'           => 'VARCHAR',
-				'constraint'     => 50
+				'constraint'     => 65
 			],
 			'no_hp'         => [
 				'type'           => 'VARCHAR',
@@ -52,7 +52,7 @@ class Pengaduan extends Migration
 			],
             'file_pendukung'=> [
 				'type'           => 'VARCHAR',
-                'constraint'     => 100,
+                'constraint'     => 100
 			],
             'status'        => [
                 'type'           => 'ENUM',

@@ -18,12 +18,12 @@ class Faq extends Migration
             'id_kategori'   => [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
 			'id_user'		=> [
 				'type'           => 'INT',
 				'constraint'     => 10,
-				'unsigned'       => true,
+				'unsigned'       => true
 			],
             'kategori'      => [
 				'type'           => 'VARCHAR',
