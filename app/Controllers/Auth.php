@@ -131,9 +131,102 @@ class Auth extends BaseController
 
     // Halaman melakukan reset password dengan mengirimkan email terdaftar
     // untuk mendapatkan email dengan tautan yang akan diarahkan ke halaman password baru
-    public function lupa_pw(): string
+    public function lupa_pw()
     {
-        return view('auth/lupa_password');
+        if ($this->session->has('isLogin')) {
+            return redirect()->to('/dashboard');
+        }
+        $data['validation'] = Services::validation();
+        return view('auth/lupa_password', $data);
+    }
+    function aksi_lupa_pw() 
+    {
+        if ($this->session->has('isLogin')) {
+            return redirect()->to('/dashboard');
+        }
+        // validasi input
+        $validation = \Config\Services::validation();
+
+        $rules = [
+            'email' => [
+                'rules' => 'required|trim|valid_email|max_length[65]',
+                'errors' => [
+                    'required' => 'Email harus di isi!',
+                    'valid_email' => 'Masukkan Email Dengan Benar',
+                    'max_length' => 'Gunakan maksimal 65 karakter!'
+                ]
+            ]
+        ];
+
+        if (!$this->validate($rules)) {
+            
+            // Aksi yang akan dilakukan jika email tidak valid
+            return redirect()->to('/lupa_password')->withInput()->with('validation', $validation);
+        }
+
+        // Aksi yang akan dilakukan jika email valid
+        $get_mail = $this->request->getPost('email');
+        // Lakukan sesuatu dengan $email
+        //get data token ada atau tidak
+		$email = $this->userModel->where('email', $get_mail)->first();
+		if($email){
+				
+			$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ 
+			function generate_string($input, $strength = 16) {
+				$input_length = strlen($input);
+				$random_string = '';
+				for($i = 0; $i < $strength; $i++) {
+					$random_character = $input[mt_rand(0, $input_length - 1)];
+					$random_string .= $random_character;
+				}
+			
+				return $random_string;
+			}
+			
+			$sublink =  generate_string($permitted_chars, 100);
+			//link reset password
+			$link = base_url('reset_password/'.$sublink.'') ;
+			//seting jam  untuk max 24 jam
+			$date = date('Y-m-d');
+			$date1 = str_replace('-', '/', $date);
+			$tomorrow = date('Y-m-d',strtotime($date1 . "+1 days"));
+
+			//send ke email
+			$to = $data['email'];
+			$subject = 'Reset Password Akun Admin';
+			$message = 'hanya berlaku 24 jam '.$link;
+			$this->email->setTo($to);
+			$this->email->setFrom('statistik.diskominfo@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
+			$this->email->setSubject($subject);
+			$this->email->setMessage($message);
+			if ($this->email->send()) 
+			{
+				//panggil model reset password
+				$this->resetModel = new ResetModel();
+				$this->resetModel->save([
+					'email_user' => $to,
+					'token' => $sublink,
+					'waktu' => $tomorrow,
+					"status" => '0'
+				]);
+				session()->setFlashdata('info', 'reset_mail_sukses');
+				return redirect()->to('login_sistem');
+			} 
+			else 
+			{
+				// $data = $this->email->printDebugger(['headers']);
+				// print_r($data);
+                //posisi saat gagal mengirim email
+				session()->setFlashdata('info', 'email_not_send');
+				return redirect()->to('lupa_password');
+			}
+
+		} else {
+            //jika email tidak ditemukan, balikkan ke halaman forgotpassword
+            session()->setFlashdata('info', 'email_not_found');
+            return redirect()->to('lupa_password');
+        }
     }
 
     // Halaman notifikasi email reset password sudah dikirim dan 
