@@ -9021,7 +9021,10 @@ textarea.form-control {
     width: 5rem;
     height: 5rem; }
     .nav-header .brand-title {
-      display: none; } }
+      display: none; }
+    .logo2 {
+      display: none;
+    } }
 
 .nav-control {
   cursor: pointer;
@@ -29410,7 +29413,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 }
 
 .nav-header .logo1{
-  width: 80px;
+  width: 70px;
 }
 
 .nav-header .logo2{

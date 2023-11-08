@@ -51,11 +51,12 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
+            <a href="<?php base_url()?>/dashboard" class="brand-logo">
                 <center>
                     <img class="logo1" src="<?php base_url()?>/assets/images/logo1.png" alt="">
-                    <img class="logo2" src="<?php base_url()?>/assets/images/logo2.png" alt="">
                 </center>
-            <!-- </a> -->
+                <img class="logo2 brand-title" src="<?php base_url()?>/assets/images/logo2.png" alt="">
+            </a>
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
