@@ -4,11 +4,11 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class RisetPassword extends Seeder
+class ResetPassword extends Seeder
 {
     public function run()
 	{
-		$riset_password_data = [
+		$reset_password_data = [
 			[
 				'id_user'          => 1,
                 'email_user'       => 'user01@gmail.com',
@@ -17,8 +17,8 @@ class RisetPassword extends Seeder
 			],
 		];
 
-		foreach($riset_password_data as $data){
-			$this->db->table('riset_password')->insert($data);
+		foreach($reset_password_data as $data){
+			$this->db->table('reset_password')->insert($data);
 		}
 
 	}
