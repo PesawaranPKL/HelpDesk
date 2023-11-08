@@ -1,0 +1,266 @@
+ERROR - 2023-11-07 02:28:01 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\HelpDesk\system\Database\Database.php(66): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Config.php(108): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 C:\xampp\htdocs\HelpDesk\system\Commands\Database\CreateDatabase.php(134): CodeIgniter\Database\Config::forge()
+#5 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\CreateDatabase->run(Array)
+#6 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('db:create', Array)
+#7 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#8 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\Database.php(66): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\HelpDesk\system\Database\Config.php(108): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 C:\xampp\htdocs\HelpDesk\system\Commands\Database\CreateDatabase.php(134): CodeIgniter\Database\Config::forge()
+#4 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\CreateDatabase->run(Array)
+#5 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('db:create', Array)
+#6 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#7 {main}
+ERROR - 2023-11-07 05:11:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama` VARCHAR(50) NOT NULL,
+	`no_hp` TEXT(20) NULL,
+	cre...' at line 3 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-023933_UserDetails.php(37): CodeIgniter\Database\Forge->createTable('user_details', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\UserDetails->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:19:28 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama` VARCHAR(50) NOT NULL,
+	`no_hp` VARCHAR(20) NULL,
+	...' at line 3 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-023933_UserDetails.php(38): CodeIgniter\Database\Forge->createTable('user_details', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\UserDetails->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:26:41 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama` VARCHAR(50) NOT NULL,
+	`no_hp` VARCHAR(20) NULL,
+	...' at line 3 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-023933_UserDetails.php(38): CodeIgniter\Database\Forge->createTable('user_details', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\UserDetails->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:27:36 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama` VARCHAR(50) NOT NULL,
+	`no_hp` VARCHAR(20) NULL,
+	...' at line 3 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-023933_UserDetails.php(38): CodeIgniter\Database\Forge->createTable('user_details', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\UserDetails->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:30:59 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`password` VARCHAR(150) NOT NULL,
+	`role` ENUM('admin','o...' at line 2 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(35): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:32:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`password` VARCHAR(150) NOT NULL,
+	`role` ENUM('admin','o...' at line 2 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(35): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:39:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`password` VARCHAR(150) NOT NULL,
+	`role` ENUM('admin','o...' at line 2 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(42): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:40:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`password` VARCHAR(150) NOT NULL,
+	`role` ENUM('admin','o...' at line 2 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(42): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:42:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`password` VARCHAR(150) NOT NULL,
+	`role` ENUM('admin','o...' at line 2 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(43): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:43:16 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`password` VARCHAR(150) NOT NULL,
+	`role` ENUM('admin','o...' at line 2 in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(43): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 05:51:51 --> mysqli_sql_exception: Invalid default value for 'created_at' in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-053017_User.php(41): CodeIgniter\Database\Forge->createTable('user', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\User->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 06:34:11 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Migrations\2023-11-07-062309_Artikel.php(58): CodeIgniter\Database\Forge->createTable('artikel', true)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(877): App\Database\Migrations\Artikel->up()
+#6 C:\xampp\htdocs\HelpDesk\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-11-07 07:31:37 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`helpdesk`.`user_details`, CONSTRAINT `user_details_email_foreign` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE CASCADE) in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Seeds\UserDetails.php(19): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\Seeder.php(146): App\Database\Seeds\UserDetails->run()
+#6 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-11-07 07:42:30 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`helpdesk`.`artikel`, CONSTRAINT `artikel_id_kategori_foreign` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE CASCADE) in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ar...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ar...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ar...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ar...', Array, false)
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Seeds\Artikel.php(25): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\Seeder.php(146): App\Database\Seeds\Artikel->run()
+#6 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-11-07 07:43:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`helpdesk`.`artikel`, CONSTRAINT `artikel_id_kategori_foreign` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE CASCADE) in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ar...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ar...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ar...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ar...', Array, false)
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Seeds\Artikel.php(24): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\Seeder.php(146): App\Database\Seeds\Artikel->run()
+#6 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-11-07 07:48:40 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`helpdesk`.`artikel`, CONSTRAINT `artikel_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `user_details` (`id_user`) ON DELETE CASCADE) in C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\HelpDesk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ar...', 0)
+#1 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ar...')
+#2 C:\xampp\htdocs\HelpDesk\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ar...')
+#3 C:\xampp\htdocs\HelpDesk\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ar...', Array, false)
+#4 C:\xampp\htdocs\HelpDesk\app\Database\Seeds\Artikel.php(25): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\HelpDesk\system\Database\Seeder.php(146): App\Database\Seeds\Artikel->run()
+#6 C:\xampp\htdocs\HelpDesk\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\HelpDesk\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\HelpDesk\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\HelpDesk\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
