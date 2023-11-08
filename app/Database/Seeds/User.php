@@ -11,7 +11,7 @@ class User extends Seeder
 		$user_data = [
 			[
 				'email'         => 'admin01@gmail.com',
-				'password'      => '$2y$10$81vaJuLTsor.qCe.TB.LbuPhGzpMXPrb6FGXj6QrtnUJUptVeK3y2',
+				'password'      => '$2y$10$Rio73GqeTbJwZuU6acS4jexgGFJalFIjLaruvzoOy7BnDWJqKoEWm',
 			],
 		];
 
