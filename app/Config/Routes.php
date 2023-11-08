@@ -11,7 +11,8 @@ $routes->get('/registrasi', 'Auth::regis');
 $routes->get('/lupa_password', 'Auth::lupa_pw');
 $routes->post('/lupa_password', 'Auth::aksi_lupa_pw');
 $routes->get('/reset_password', 'Auth::reset_pw');
-$routes->get('/password_baru', 'Auth::pw_baru');
+$routes->get('/password_baru/(:segment)', 'Auth::pw_baru/$1');
+$routes->post('/password_baru', 'Auth::validasi_pw_baru');
 
 
 //

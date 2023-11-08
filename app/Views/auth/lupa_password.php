@@ -1,6 +1,20 @@
 <?= $this->extend('layout/auth_layout') ?>
 
 <?= $this->section('content') ?>
+<?php if(session()->getFlashdata('info') == 'email_not_send'){ ?>
+<script>
+function sweet(){
+swal("Peringatan!","Nampaknya Email Anda Gagal Reset, Silahkan Ulangi.", "warning");
+}
+</script> 
+<?php } ?>
+<?php if(session()->getFlashdata('info') == 'email_not_found'){ ?>
+<script>
+function sweet(){
+swal("Peringatan!","Nampaknya Email Anda Tidak terdaftar, Silahkan Masukan Email Yang Terdaftar.", "warning");
+}
+</script> 
+<?php } ?>
 
     <!--============= Form Login Section Starts Here =============-->
     <div class="login-section mb-100">
@@ -19,10 +33,10 @@
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
-                            <?php if (session('validation')): ?>
-                                <div class="alert alert-danger">
-                                    <?= session('validation')->listErrors() ?>
-                                </div>
+                            <?php if (session('validation') && session('validation')->hasError('email')): ?>
+                                <span class="text-danger">
+                                    <?= session('validation')->getError('email') ?>
+                            </span>
                             <?php endif; ?>
                         </div>
                         

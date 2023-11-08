@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body onload="sweet()">
     <!--============= ScrollToTop Section Starts Here =============-->
     <div class="overlayer" id="overlayer">
         <div class="loader">
@@ -35,9 +35,9 @@
     <!--============= ScrollToTop Section Ends Here =============-->
 
     <!--============= Hero Section Starts Here =============-->
-    <div class="hero-section about-style bg_img bottom_center" data-background="assets/images/banner/page-header-2.jpg">
+    <div class="hero-section about-style bg_img bottom_center" data-background="<?php base_url() ?>/assets/images/banner/page-header-2.jpg">
         <div class="bottom-shape d-none d-md-block">
-            <img src="assets/images/banner/banner-shape.png" alt="banner">
+            <img src="<?php base_url() ?>/assets/images/banner/banner-shape.png" alt="banner">
         </div>
     </div>
     <!--============= Hero Section Ends Here =============-->
@@ -57,6 +57,7 @@
     <script src="<?= base_url() ?>/assets/js/magnific-popup.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 

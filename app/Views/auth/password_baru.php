@@ -9,7 +9,9 @@
                 <div class="login-content">
                     <h2 class="title">HelpDesk</h2>
                     <p align="center">Reset Password</p><br>
-                    <form action="#" class="login100-form validate-form">
+                    <form action="<?php  base_url() ?>/password_baru" method="POST" class="login100-form validate-form">
+                    <?= csrf_field(); ?>
+                        <input class="input100" type="email" name="email" id="email" value="<?= $email ?>" hidden>
 
                         <div class="wrap-input100 validate-input" data-validate = "Password Baru Wajib Diisi">
                             <input class="input100" type="password" name="pw_baru" id="pw_baru" placeholder="Password Baru">
@@ -17,6 +19,11 @@
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
+                            <?php if (session('validation') && session('validation')->hasError('pw_baru')): ?>
+                                <span class="text-danger">
+                                    <?= session('validation')->getError('pw_baru') ?>
+                                </span>
+                            <?php endif; ?>
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate = "Konfirmasi Password Baru Wajib Diisi">
@@ -25,6 +32,11 @@
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
+                            <?php if (session('validation') && session('validation')->hasError('kpw_baru')): ?>
+                                <span class="text-danger">
+                                    <?= session('validation')->getError('kpw_baru') ?>
+                                </span>
+                            <?php endif; ?>
                         </div>
 
                         <div class="icheck">

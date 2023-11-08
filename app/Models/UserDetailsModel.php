@@ -8,7 +8,7 @@ class UserDetailsModel extends Model
 {
     protected $DBGroup              = 'default';
     protected $table                = 'user_details';
-    protected $primaryKey           = 'id_user_detail';
+    protected $primaryKey           = 'id_user';
     protected $allowedFields        = ['email', 'nama', 'no_hp', 'create_at'];
 
     // Dates

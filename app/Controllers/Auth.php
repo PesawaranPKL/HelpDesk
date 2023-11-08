@@ -8,6 +8,8 @@ use App\Models\UserDetailsModel;
 use Config\Services;
 use CodeIgniter\Throttle\ThrottlerInterface;
 use CodeIgniter\Throttle\ThrottlerTrait;
+use DateInterval;
+use DateTime;
 
 class Auth extends BaseController
 {
@@ -15,8 +17,13 @@ class Auth extends BaseController
     public function __construct()
     {
         $this->userModel = new UserModel();
+        $this->userdetailModel = new UserDetailsModel();
+        $this->risetpasswordModel = new RisetPasswordModel();
         $this->session = Services::session();
         $this->email = Services::email();
+    }
+    private function hash_password($pass_user){
+        return password_hash($pass_user, PASSWORD_BCRYPT);
     }
 
 
@@ -168,7 +175,7 @@ class Auth extends BaseController
         // Aksi yang akan dilakukan jika email valid
         $get_mail = $this->request->getPost('email');
         // Lakukan sesuatu dengan $get_mail untuk cek apakah email ada
-		$email = $this->userModel->where('email', $get_mail)->first();
+		$email = $this->userdetailModel->where('email', $get_mail)->first();
 		if($email){
 				
 			$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -187,10 +194,13 @@ class Auth extends BaseController
 			$sublink =  generate_string($permitted_chars, 100);
 			//link reset password
 			$link = base_url('reset_password/'.$sublink.'') ;
-			//seting jam  untuk max 24 jam
-			$date = date('Y-m-d');
-			$date1 = str_replace('-', '/', $date);
-			$tomorrow = date('Y-m-d',strtotime($date1 . "+1 days"));
+
+            // Mendapatkan waktu saat ini
+            $now = new DateTime();
+            // Menambahkan 24 jam (1 hari) ke waktu saat ini
+            $now->add(new DateInterval('P1D'));
+            // Format ulang waktu ke 'Y-m-d'
+            $tomorrow = $now->format('Y-m-d H:i:s');
 
 			//send ke email
 			$to = $get_mail;
@@ -205,6 +215,7 @@ class Auth extends BaseController
 				//panggil model reset password
 				$this->resetModel = new RisetPasswordModel();
 				$this->resetModel->save([
+					'id_user' => $email['id_user'],
 					'email_user' => $to,
 					'token' => $sublink,
 					'waktu' => $tomorrow,
@@ -212,9 +223,7 @@ class Auth extends BaseController
 				]);
 				session()->setFlashdata('info', 'reset_mail_sukses');
 				return redirect()->to('reset_password');
-			} 
-			else 
-			{
+			} else {
 				// $data = $this->email->printDebugger(['headers']);
 				// print_r($data);
                 //posisi saat gagal mengirim email
@@ -224,22 +233,100 @@ class Auth extends BaseController
 
 		} else {
             //jika email tidak ditemukan, balikkan ke halaman forgotpassword
-            session()->setFlashdata('info', 'email_not_found');
+            session()->setFlashdata('info', 'found');
             return redirect()->to('lupa_password');
         }
     }
 
     // Halaman notifikasi email reset password sudah dikirim dan 
     // jika email tidak masuk maka kirim ulang email dapat dilakukan dihalaman ini
-    public function reset_pw(): string
+    public function reset_pw()
     {
+        if ($this->session->has('isLogin')) {
+            return redirect()->to('/dashboard');
+        }
         return view('auth/reset_password');
     }
 
     // Halaman untuk melakukan perubahan password
-    public function pw_baru(): string
+    public function pw_baru($stoken)
     {
-        return view('auth/password_baru');
+        if ($this->session->has('isLogin')) {
+            return redirect()->to('/dashboard');
+        }
+        //get data token ada atau tidak
+        $this->resetModel = new RisetPasswordModel();
+		$token = $this->resetModel->where('token', $stoken)->first();
+		if($token){
+			//cek password
+			if($token['waktu'] >= date('Y-m-d H:i:s')){
+				//menampung email pada data
+				$data['email'] = $token['email_user'];
+                return view('auth/password_baru', $data);
+			
+			}else{
+				session()->setFlashdata('info', 'token_expired');
+            	return redirect()->to('login_sistem');
+			}
+
+		} else {
+            //jika token tidak ditemukan, balikkan ke halaman login
+            session()->setFlashdata('info', 'roken_not_found');
+            return redirect()->to('login_sistem');
+        }
+    }
+    function validasi_pw_baru()
+    {
+        if ($this->session->has('isLogin')) {
+            return redirect()->to('/dashboard');
+        }
+        // validasi input
+        $validation = \Config\Services::validation();
+
+        $rules = [
+            'pw_baru' => [
+                'rules' => 'required|trim|min_length[8]|max_length[45]',
+                'errors' => [
+                    'required' => 'Password harus di isi',
+                    'min_length' => 'Password terlalu pendek!',
+                    'max_length' => 'Gunakan maksimal 45 karakter!'
+                ]
+            ],
+            'kpw_baru' => [
+                'rules' => 'required|trim|min_length[8]|max_length[45]',
+                'errors' => [
+                    'required' => 'Password harus di isi',
+                    'min_length' => 'Password terlalu pendek!',
+                    'max_length' => 'Gunakan maksimal 45 karakter!'
+                ]
+            ]
+        ];
+        if (!$this->validate($rules)) {
+            
+            // Aksi yang akan dilakukan jika email tidak valid
+            return redirect()->back()->withInput()->with('validation', $validation);
+        }
+        //ambil data dari form
+        $data = $this->request->getPost();
+		// var_dump($data);
+        $password = $this->hash_password($data['kpw_baru']);
+		
+        $dataupdate = [
+			'password' => $password
+		];
+		$update = $this->userModel->updatepassword($dataupdate, $data['email']);
+		// Jika berhasil melakukan update
+		if ($update) {
+			// hapus jejak reset password
+            $delete = $this->risetpasswordModel->where('email_user', $data['email'])->delete();
+
+			if ($delete) {
+			// mengirim notif
+			echo session()->setFlashdata('info', 'sukses_password_reset');
+			// Redirect ke halaman login
+			return redirect()->to('login_sistem');
+			}
+		}
     }
 
 
