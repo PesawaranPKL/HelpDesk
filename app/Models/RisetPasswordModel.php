@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class RisetPasswordModel extends Model
 {
     protected $DBGroup              = 'default';
     protected $table                = 'riset_password';

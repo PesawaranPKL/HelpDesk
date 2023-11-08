@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\RisetPasswordModel;
 use App\Models\UserModel;
 use App\Models\UserDetailsModel;
 use Config\Services;
@@ -166,8 +167,7 @@ class Auth extends BaseController
 
         // Aksi yang akan dilakukan jika email valid
         $get_mail = $this->request->getPost('email');
-        // Lakukan sesuatu dengan $email
-        //get data token ada atau tidak
+        // Lakukan sesuatu dengan $get_mail untuk cek apakah email ada
 		$email = $this->userModel->where('email', $get_mail)->first();
 		if($email){
 				
@@ -193,17 +193,17 @@ class Auth extends BaseController
 			$tomorrow = date('Y-m-d',strtotime($date1 . "+1 days"));
 
 			//send ke email
-			$to = $data['email'];
+			$to = $get_mail;
 			$subject = 'Reset Password Akun Admin';
 			$message = 'hanya berlaku 24 jam '.$link;
 			$this->email->setTo($to);
-			$this->email->setFrom('statistik.diskominfo@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
+			$this->email->setFrom('noreply@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
 			$this->email->setSubject($subject);
 			$this->email->setMessage($message);
 			if ($this->email->send()) 
 			{
 				//panggil model reset password
-				$this->resetModel = new ResetModel();
+				$this->resetModel = new RisetPasswordModel();
 				$this->resetModel->save([
 					'email_user' => $to,
 					'token' => $sublink,
@@ -211,7 +211,7 @@ class Auth extends BaseController
 					"status" => '0'
 				]);
 				session()->setFlashdata('info', 'reset_mail_sukses');
-				return redirect()->to('login_sistem');
+				return redirect()->to('reset_password');
 			} 
 			else 
 			{
