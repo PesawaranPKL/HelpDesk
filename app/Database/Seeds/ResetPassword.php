@@ -12,7 +12,7 @@ class ResetPassword extends Seeder
 			[
                 'email_user'       => 'user01@gmail.com',
                 'token'		       => 'https://tokenamambdjabdjbdja',
-				'waktu'            => '2038-01-19 03:14:07',
+				'waktu'            => '2023-10-11 03:14:07',
 			],
 		];
 
