@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $DBGroup              = 'default';
-    protected $table                = 'tabel_user';
+    protected $table                = 'user';
     protected $primaryKey           = 'id_user';
     protected $allowedFields        = ['email', 'password', 'role', 'status_akun'];
 
