@@ -22,7 +22,8 @@ class Auth extends BaseController
         $this->session = Services::session();
         $this->email = Services::email();
     }
-    private function hash_password($pass_user){
+    private function hash_password($pass_user)
+    {
         return password_hash($pass_user, PASSWORD_BCRYPT);
     }
 
@@ -44,13 +45,15 @@ class Auth extends BaseController
         }
 
         // validasi input
-        if (!$this->validate([
+        $validation = \Config\Services::validation();
+
+        $rules = [
             'email' => [
-                'rules' => 'required|trim|valid_email|max_length[50]',
+                'rules' => 'required|trim|valid_email|max_length[65]',
                 'errors' => [
                     'required' => 'Email harus di isi!',
-                    'valid_email' => 'Masukkan Email',
-                    'max_length' => 'Gunakan maksimal 50 karakter!'
+                    'valid_email' => 'Masukkan Email Dengan Benar',
+                    'max_length' => 'Gunakan maksimal 65 karakter!'
                 ]
             ],
             'password' => [
@@ -61,16 +64,12 @@ class Auth extends BaseController
                     'max_length' => 'Gunakan maksimal 45 karakter!'
                 ]
             ]
-        ])) {
+        ];
 
-            $validation = Services::validation();
+        if (!$this->validate($rules)) {
 
-            $errors = [
-                'email' => $validation->getError('email'),
-                'password' => $validation->getError('password')
-            ];
-            // Lakukan sesuatu dengan daftar error, seperti meneruskannya ke view
-            return redirect()->to('/login_sistem')->withInput()->with('errors', $errors);
+            // Aksi yang akan dilakukan jika email tidak valid
+            return redirect()->to('/login_sistem')->withInput()->with('validation', $validation);
         }
 
         $throttler = Services::throttler();
@@ -147,7 +146,7 @@ class Auth extends BaseController
         $data['validation'] = Services::validation();
         return view('auth/lupa_password', $data);
     }
-    function aksi_lupa_pw() 
+    function aksi_lupa_pw()
     {
         if ($this->session->has('isLogin')) {
             return redirect()->to('/dashboard');
@@ -167,7 +166,7 @@ class Auth extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            
+
             // Aksi yang akan dilakukan jika email tidak valid
             return redirect()->to('/lupa_password')->withInput()->with('validation', $validation);
         }
@@ -175,25 +174,26 @@ class Auth extends BaseController
         // Aksi yang akan dilakukan jika email valid
         $get_mail = $this->request->getPost('email');
         // Lakukan sesuatu dengan $get_mail untuk cek apakah email ada
-		$email = $this->userdetailModel->where('email', $get_mail)->first();
-		if($email){
-				
-			$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
- 
-			function generate_string($input, $strength = 16) {
-				$input_length = strlen($input);
-				$random_string = '';
-				for($i = 0; $i < $strength; $i++) {
-					$random_character = $input[mt_rand(0, $input_length - 1)];
-					$random_string .= $random_character;
-				}
-			
-				return $random_string;
-			}
-			
-			$sublink =  generate_string($permitted_chars, 100);
-			//link reset password
-			$link = base_url('reset_password/'.$sublink.'') ;
+        $email = $this->userdetailModel->where('email', $get_mail)->first();
+        if ($email) {
+
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            function generate_string($input, $strength = 16)
+            {
+                $input_length = strlen($input);
+                $random_string = '';
+                for ($i = 0; $i < $strength; $i++) {
+                    $random_character = $input[mt_rand(0, $input_length - 1)];
+                    $random_string .= $random_character;
+                }
+
+                return $random_string;
+            }
+
+            $sublink =  generate_string($permitted_chars, 100);
+            //link reset password
+            $link = base_url('reset_password/' . $sublink . '');
 
             // Mendapatkan waktu saat ini
             $now = new DateTime();
@@ -202,36 +202,34 @@ class Auth extends BaseController
             // Format ulang waktu ke 'Y-m-d'
             $tomorrow = $now->format('Y-m-d H:i:s');
 
-			//send ke email
-			$to = $get_mail;
-			$subject = 'Reset Password Akun Admin';
-			$message = 'hanya berlaku 24 jam '.$link;
-			$this->email->setTo($to);
-			$this->email->setFrom('noreply@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
-			$this->email->setSubject($subject);
-			$this->email->setMessage($message);
-			if ($this->email->send()) 
-			{
-				//panggil model reset password
-				$this->resetModel = new RisetPasswordModel();
-				$this->resetModel->save([
-					'id_user' => $email['id_user'],
-					'email_user' => $to,
-					'token' => $sublink,
-					'waktu' => $tomorrow,
-					"status" => '0'
-				]);
-				session()->setFlashdata('info', 'reset_mail_sukses');
-				return redirect()->to('reset_password');
-			} else {
-				// $data = $this->email->printDebugger(['headers']);
-				// print_r($data);
+            //send ke email
+            $to = $get_mail;
+            $subject = 'Reset Password Akun Admin';
+            $message = 'hanya berlaku 24 jam ' . $link;
+            $this->email->setTo($to);
+            $this->email->setFrom('noreply@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
+            $this->email->setSubject($subject);
+            $this->email->setMessage($message);
+            if ($this->email->send()) {
+                //panggil model reset password
+                $this->resetModel = new RisetPasswordModel();
+                $this->resetModel->save([
+                    'id_user' => $email['id_user'],
+                    'email_user' => $to,
+                    'token' => $sublink,
+                    'waktu' => $tomorrow,
+                    "status" => '0'
+                ]);
+                session()->setFlashdata('info', 'reset_mail_sukses');
+                return redirect()->to('reset_password');
+            } else {
+                // $data = $this->email->printDebugger(['headers']);
+                // print_r($data);
                 //posisi saat gagal mengirim email
-				session()->setFlashdata('info', 'email_not_send');
-				return redirect()->to('lupa_password');
-			}
-
-		} else {
+                session()->setFlashdata('info', 'email_not_send');
+                return redirect()->to('lupa_password');
+            }
+        } else {
             //jika email tidak ditemukan, balikkan ke halaman forgotpassword
             session()->setFlashdata('info', 'found');
             return redirect()->to('lupa_password');
@@ -256,20 +254,18 @@ class Auth extends BaseController
         }
         //get data token ada atau tidak
         $this->resetModel = new RisetPasswordModel();
-		$token = $this->resetModel->where('token', $stoken)->first();
-		if($token){
-			//cek password
-			if($token['waktu'] >= date('Y-m-d H:i:s')){
-				//menampung email pada data
-				$data['email'] = $token['email_user'];
+        $token = $this->resetModel->where('token', $stoken)->first();
+        if ($token) {
+            //cek password
+            if ($token['waktu'] >= date('Y-m-d H:i:s')) {
+                //menampung email pada data
+                $data['email'] = $token['email_user'];
                 return view('auth/password_baru', $data);
-			
-			}else{
-				session()->setFlashdata('info', 'token_expired');
-            	return redirect()->to('login_sistem');
-			}
-
-		} else {
+            } else {
+                session()->setFlashdata('info', 'token_expired');
+                return redirect()->to('login_sistem');
+            }
+        } else {
             //jika token tidak ditemukan, balikkan ke halaman login
             session()->setFlashdata('info', 'roken_not_found');
             return redirect()->to('login_sistem');
@@ -302,31 +298,31 @@ class Auth extends BaseController
             ]
         ];
         if (!$this->validate($rules)) {
-            
+
             // Aksi yang akan dilakukan jika email tidak valid
             return redirect()->back()->withInput()->with('validation', $validation);
         }
         //ambil data dari form
         $data = $this->request->getPost();
-		// var_dump($data);
+        // var_dump($data);
         $password = $this->hash_password($data['kpw_baru']);
-		
+
         $dataupdate = [
-			'password' => $password
-		];
-		$update = $this->userModel->updatepassword($dataupdate, $data['email']);
-		// Jika berhasil melakukan update
-		if ($update) {
-			// hapus jejak reset password
+            'password' => $password
+        ];
+        $update = $this->userModel->updatepassword($dataupdate, $data['email']);
+        // Jika berhasil melakukan update
+        if ($update) {
+            // hapus jejak reset password
             $delete = $this->risetpasswordModel->where('email_user', $data['email'])->delete();
 
-			if ($delete) {
-			// mengirim notif
-			echo session()->setFlashdata('info', 'sukses_password_reset');
-			// Redirect ke halaman login
-			return redirect()->to('login_sistem');
-			}
-		}
+            if ($delete) {
+                // mengirim notif
+                echo session()->setFlashdata('info', 'sukses_password_reset');
+                // Redirect ke halaman login
+                return redirect()->to('login_sistem');
+            }
+        }
     }
 
 

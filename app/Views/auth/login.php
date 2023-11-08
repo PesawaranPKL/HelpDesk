@@ -10,6 +10,11 @@
                 <h2 class="title">HelpDesk</h2>
                 <form action="<?= htmlentities(base_url('login_sistem'), ENT_QUOTES) ?>" method="POST" class="login100-form validate-form">
                     <?php csrf_field() ?>
+                    <?php if (session('validation')) : ?>
+                        <div class="alert alert-danger">
+                            <?= session('validation')->listErrors() ?>
+                        </div>
+                    <?php endif; ?>
                     <?php if (session()->has('login_err')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <?php if (session()->get('login_err') == 'empty') : ?>
@@ -30,25 +35,19 @@
                         </div>
                     <?php endif; ?>
                     <div class="wrap-input100 validate-input" data-validate="Masukkan Email Valid: contoh@email.com">
-                        <input class="input100 <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" type="text" name="email" id="email" placeholder="Email">
+                        <input class="input100" type="text" name="email" id="email" placeholder="Email">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
-                        <div class="invalid-feedback" style="color: red; margin-top: 5px;">
-                            <?= $validation->getError('email'); ?>
-                        </div>
                     </div>
 
                     <div class="wrap-input100 validate-input pw" data-validate="Password Wajib Diisi">
-                        <input class="input100 <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" type="password" name="password" id="pw" placeholder="Password">
+                        <input class="input100" type="password" name="password" id="pw" placeholder="Password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
-                        <div class="invalid-feedback" style="color: red; margin-top: 5px;">
-                            <?= $validation->getError('password'); ?>
-                        </div>
                     </div>
                     <div class="input-group-append">
 
