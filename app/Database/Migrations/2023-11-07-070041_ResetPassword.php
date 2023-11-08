@@ -15,11 +15,6 @@ class ResetPassword extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true
 			],
-            'id_user'           => [
-				'type'           => 'INT',
-				'constraint'     => 10,
-				'unsigned'       => true
-			],
             'email_user'        => [
 				'type'           => 'VARCHAR',
 				'constraint'     => 65
@@ -35,7 +30,6 @@ class ResetPassword extends Migration
 			'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
 		]);
         $this->forge->addKey('id_reset_password', true);
-        $this->forge->addForeignKey('id_user', 'user_details', 'id_user', '', 'CASCADE');
         $this->forge->createTable('reset_password', true);
     }
 
