@@ -202,29 +202,31 @@ class Auth extends BaseController
             // Format ulang waktu ke 'Y-m-d'
             $tomorrow = $now->format('Y-m-d H:i:s');
 
-            //send ke email
+            /* ========================== Email ============================== */
             $to = $get_mail;
-            $subject = 'Reset Password Akun Admin';
-            $message = 'hanya berlaku 24 jam ' . $link;
+            $subject = 'Perbarui Sandi Helpdesk';
+            $data['link'] = $link;
+            $html = view('sendmail/mail_lupapassword', $data);
             $this->email->setTo($to);
-            $this->email->setFrom('noreply@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
+            $this->email->setFrom('helpdesk@pesawarankab.go.id', 'Dinas Kominfotiksan Kabupaten Pesawaran');
             $this->email->setSubject($subject);
-            $this->email->setMessage($message);
-            if ($this->email->send()) {
-                //panggil model reset password
-                $this->resetModel = new RisetPasswordModel();
-                $this->resetModel->save([
-                    'id_user' => $email['id_user'],
-                    'email_user' => $to,
-                    'token' => $sublink,
-                    'waktu' => $tomorrow,
-                    "status" => '0'
-                ]);
-                session()->setFlashdata('info', 'reset_mail_sukses');
-                return redirect()->to('reset_password');
-            } else {
-                // $data = $this->email->printDebugger(['headers']);
-                // print_r($data);
+            $this->email->setMessage($html);
+
+			if ($this->email->send()) 
+			{
+				//panggil model reset password
+				$this->resetModel = new RisetPasswordModel();
+				$this->resetModel->save([
+					'id_user' => $email['id_user'],
+					'email_user' => $to,
+					'token' => $sublink,
+					'waktu' => $tomorrow
+				]);
+				session()->setFlashdata('info', 'reset_mail_sukses');
+				return redirect()->to('reset_password');
+			} else {
+				// $data = $this->email->printDebugger(['headers']);
+				// print_r($data);
                 //posisi saat gagal mengirim email
                 session()->setFlashdata('info', 'email_not_send');
                 return redirect()->to('lupa_password');
