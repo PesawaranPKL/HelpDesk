@@ -14,6 +14,8 @@ $routes->get('/reset_password', 'Auth::reset_pw');
 $routes->get('/password_baru/(:segment)', 'Auth::pw_baru/$1');
 $routes->post('/password_baru', 'Auth::validasi_pw_baru');
 
+$routes->get('/artikel', 'Admin\Artikel::daftar_artikel');
+
 
 //
 $routes->post('login_sistem', 'Auth::authsignin');
