@@ -118,7 +118,7 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
                     </li>
-                    <li><a href="<?php base_url() ?>/detail_artikel" class="ai-icon" aria-expanded="false">
+                    <li><a href="<?php base_url() ?>/daftar_artikel" class="ai-icon" aria-expanded="false">
                             <i class="bi bi-layout-text-sidebar-reverse"></i>
 							<span class="nav-text">Artikel</span>
 						</a>
