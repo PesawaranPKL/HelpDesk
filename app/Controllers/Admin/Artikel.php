@@ -15,4 +15,9 @@ class Artikel extends BaseController
     {
         return view('admin/detail_artikel');
     }
+
+    public function tambah_artikel(): string
+    {
+        return view('admin/tambah_artikel');
+    }
 }

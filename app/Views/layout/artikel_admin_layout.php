@@ -6,6 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HelpDesk Kabupaten Pesawaran</title>
 
+    <link href="/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+
     <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/LogoHelp.png" type="image/x-icon">
 
     <!-- Bootstrap Icon -->
