@@ -31,12 +31,20 @@ $routes->group('dashboard', static function ($routes) {
 
     $routes->get('admin', 'DashboardController::index', ['namespace' => '\App\Controllers\Admin']);
     $routes->group('admin', static function ($routes) {
+        /* ====================================== ARTIKEL ADMIN ================================================== */
+
+        $routes->get('artikel', 'ArtikelController::index', ['namespace' => '\App\Controllers\Admin']);
+        $routes->group('artikel', static function ($routes) {
+
+        });
     });
 
-    /* ====================================== USER ================================================== */
+    /* ====================================== Operator ================================================== */
     $routes->get('operator', 'DashboardController::index', ['namespace' => '\App\Controllers\Operator']);
     $routes->group('operator', static function ($routes) {
         //isi route lanjutan
 
     });
+
+    
 });
