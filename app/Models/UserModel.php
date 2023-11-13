@@ -14,7 +14,7 @@ class UserModel extends Model
     // Dates
     protected $useTimestamps        = false;
 
-    public function updatepassword($dataupdate, $email)
+    public function updatedatauser($dataupdate, $email)
     {
         return $this->db->table('user')
         ->update($dataupdate, ['email' => $email]);
