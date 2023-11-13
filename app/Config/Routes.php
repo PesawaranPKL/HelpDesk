@@ -35,6 +35,12 @@ $routes->group('dashboard', static function ($routes) {
 
         $routes->get('artikel', 'ArtikelController::index', ['namespace' => '\App\Controllers\Admin']);
         $routes->group('artikel', static function ($routes) {
+            $routes->get('tambah', 'ArtikelController::tambah_artikel', ['namespace' => '\App\Controllers\Admin' ]);
+            $routes->post('tambah', 'ArtikelController::input_artikel', ['namespace' => '\App\Controllers\Admin' ]);
+			$routes->get('detail/(:segment)', 'ArtikelController::data/$1', ['namespace' => '\App\Controllers\Admin' ]);
+			$routes->get('edit/(:segment)', 'ArtikelController::edit_artikel/$1', ['namespace' => '\App\Controllers\Admin' ]);
+			$routes->post('edit/(:segment)', 'ArtikelController::update_artikel/$1', ['namespace' => '\App\Controllers\Admin' ]);
+			$routes->get('hapus/(:segment)', 'ArtikelController::delete_artikel/$1', ['namespace' => '\App\Controllers\Admin' ]);
 
         });
     });
