@@ -19,7 +19,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/LogoHelp.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo1.png" type="image/x-icon">
 
 </head>
 
