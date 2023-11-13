@@ -1,0 +1,11 @@
+<?= $this->extend('layout/admin_layout') ?>
+
+<?= $this->section('content') ?>
+
+<!-- START CONTENT -->
+
+
+<!-- END CONTENT -->
+
+
+<?= $this->endSection() ?>
