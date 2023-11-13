@@ -19,6 +19,9 @@ $routes->get('/detail_artikel', 'Admin\Artikel::detail_artikel');
 $routes->get('/tambah_artikel', 'Admin\Artikel::tambah_artikel');
 
 
+$routes->get('/ganti_email', 'Auth::ganti_email');
+
+
 
 //
 $routes->post('login_sistem', 'Auth::authsignin');

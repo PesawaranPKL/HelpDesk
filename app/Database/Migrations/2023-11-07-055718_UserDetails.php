@@ -33,7 +33,7 @@ class UserDetails extends Migration
             
 		]);
         $this->forge->addKey('id_user', true);
-        $this->forge->addForeignKey('email', 'user', 'email', '', 'CASCADE');
+        $this->forge->addForeignKey('email', 'user', 'email', 'CASCADE', 'CASCADE');
         $this->forge->createTable('user_details', true);
     }
 

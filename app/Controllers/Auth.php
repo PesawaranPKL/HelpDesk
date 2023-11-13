@@ -10,6 +10,8 @@ use CodeIgniter\Throttle\ThrottlerInterface;
 use CodeIgniter\Throttle\ThrottlerTrait;
 use DateInterval;
 use DateTime;
+use CodeIgniter\Model;
+
 
 class Auth extends BaseController
 {
@@ -312,7 +314,7 @@ class Auth extends BaseController
         $dataupdate = [
             'password' => $password
         ];
-        $update = $this->userModel->updatepassword($dataupdate, $data['email']);
+        $update = $this->userModel->updatedatauser($dataupdate, $data['email']);
         // Jika berhasil melakukan update
         if ($update) {
             // hapus jejak reset password
@@ -336,5 +338,17 @@ class Auth extends BaseController
         session()->destroy();
         session()->setFlashdata('akun', 'logout');
         return redirect()->to('/login_sistem');
+    }
+    public function ganti_email(){
+        $new_mail = "mahesadarmasatria@gmail.com";
+        $email = "admin01@gmail.com";
+        $dataupdate = [
+            "email" => $new_mail
+        ];
+        $update = $this->userModel->updatedatauser($dataupdate, $email);
+        if($update){
+           echo "sukses";
+        }
+
     }
 }
