@@ -26291,13 +26291,6 @@ table.table {
     -ms-transition: all 0.5s;
     transition: all 0.5s; }
 
-.new-arrival-product:hover .new-arrivals-img-contnent img {
-  transform: scale(1.5) translateY(12%) rotate(-7deg);
-  -moz-transform: scale(1.5) translateY(12%) rotate(-7deg);
-  -webkit-transform: scale(1.5) translateY(12%) rotate(-7deg);
-  -ms-transform: scale(1.5) translateY(12%) rotate(-7deg);
-  -o-transform: scale(1.5) translateY(12%) rotate(-7deg); }
-
 /*
 ===================================
     list view
@@ -29418,4 +29411,14 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 
 .nav-header .logo2{
   width: 120px;
+}
+
+.img-holder {
+  position: relative;
+}
+
+.img-holder .link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
