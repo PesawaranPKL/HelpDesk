@@ -1,4 +1,4 @@
-﻿<?= $this->extend('layout/artikel/artikel_admin_layout') ?>
+﻿<?= $this->extend('layout/admin_layout') ?>
 
 <?= $this->section('content') ?>
 <!--**********************************
@@ -22,32 +22,20 @@
 
           <div class="card-body custom-ekeditor">
             <div class="basic-form">
-              <form>
+              <form action="<?= base_url('dashboard/admin/artikel/tambah/') ?>" method="post" enctype="multipart/form-data">
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label"><strong>Judul Artikel</strong></label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="Judul Artikel" />
-                  </div>
-                </div>
-                <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label"><strong>Author</strong></label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="Author" />
+                    <input type="text" class="form-control" placeholder="Judul Artikel" name="judul_artikel" />
                   </div>
                 </div>
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label"><strong>Kategori Artikel</strong></label>
                   <div class="col-sm-9">
-                    <select id="inputState" class="default-select form-control wide" placeholder="Kategori Artikel">
-                      <option>API</option>
-                      <option>Email</option>
-                      <option>Domain</option>
-                      <option>Data</option>
-                      <option>Kemitraan</option>
-                      <option>Hosting</option>
-                      <option>Serangan Cyber</option>
-                      <option>Jaringan</option>
-                      <option>Informasi</option>
+                    <select id="inputState" class="default-select form-control wide" placeholder="Kategori Artikel" name="id_kategori">
+                      <?php foreach ($kategori as $k) : ?>
+                        <option value="<?= $k['id_kategori']; ?>"><?= $k['kategori']; ?></option>
+                      <?php endforeach; ?>
                     </select>
                   </div>
                 </div>
@@ -56,11 +44,11 @@
                     <label class="col-form-label col-sm-3 pt-0"><strong>Status Tayang</strong></label>
                     <div class="col-sm-9">
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
+                        <input class="form-check-input" type="radio" name="status" value="Tayang" checked="" />
                         <label class="form-check-label"> Tayang </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" value="option2" />
+                        <input class="form-check-input" type="radio" name="status" value="Tidak Tayang" />
                         <label class="form-check-label"> Tidak Tayang </label>
                       </div>
                     </div>
@@ -69,44 +57,58 @@
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label"><strong>File Pendukung</strong></label>
                   <div class="col-sm-9">
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" type="file" id="formFile" name="thumbnail">
                   </div>
                 </div>
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label"><strong>Isi Artikel</strong></label>
                   <div class="col-sm-9">
-                    <div id="ckeditor"></div>
+                    <textarea name="isi_artikel" id="ckeditor"></textarea>
+                  </div>
+                </div>
+                <div class="col-xl-12 col-xxl-6">
+                  <div class="col-md-6 mb-2">
+                    <button class="btn btn-primary btn-block" type="submit">Simpan Artikel</button>
                   </div>
                 </div>
               </form>
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-md-6 mb-2">
-                <button class="btn btn-primary btn-block">Simpan Artikel</button>
+
+              <div class="col-xl-12 col-xxl-6">
+                <div class="col-xl-6">
+                  <button class="btn btn-dark btn-block" data-bs-toggle="modal" data-bs-target="#tinjauArtikel">Tinjau Artikel</button>
+                </div>
               </div>
-              <div class="col-md-6">
-                <button class="btn btn-dark btn-block" data-bs-toggle="modal" data-bs-target="#tinjauArtikel">Tinjau Artikel</button>
-              </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="tinjauArtikel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Modal Tinjau Artikel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <!-- Modal -->
+              <div class="modal fade" id="tinjauArtikel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Modal Tinjau Artikel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Preview Artikel</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="col-xl-8 col-lg-7 mb-70">
+                        <div class="knowledge-single">
+                          <div class="knowledge-header">
+                            <h2 class="title">judul Artikel</h2>
+                          </div>
+
+                          <div class="know-single-item">
+                            <div class="video-wrapper mb-3">
+                              <img src="" alt="Thumbnail">
+                            </div>
+                            <p>Isi Artikel</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

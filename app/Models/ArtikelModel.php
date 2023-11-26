@@ -18,5 +18,4 @@ class ArtikelModel extends Model
             ->join('user_details', 'user_details.id_user=artikel.id_user')
             ->get()->getResultArray();
     }
-
 }

@@ -9,20 +9,18 @@
             <div class="col-xl-8 col-lg-7 mb-70">
                 <div class="knowledge-single">
                     <div class="knowledge-header">
-                        <h2 class="title"><?= $a['judul_artikel']; ?></h2>
+                        <h2 class="title"><?= $artikel['judul_artikel']; ?></h2>
                         <ul class="knowledge-meta">
-                            <li>Created: <?= $a['created_at']; ?></li>
-                            <!-- <li>Updated: <?= $a['updated_at']; ?></li> -->
+                            <li>Created: <?= $artikel['created_at']; ?></li>
+                            <!-- <li>Updated: <?= $artikel['updated_at']; ?></li> -->
                         </ul>
                     </div>
 
                     <div class="know-single-item">
                         <div class="video-wrapper">
-                            <img src="assets/admin/images/artikel/thumbnails/<?= $a['thumbnail']; ?>" alt="video">
-                            <!-- <a href="https://www.youtube.com/watch?v=GT6-H4BRyqQ" class="video-button popup">
-                                <i class="flaticon-play"></i></a> -->
+                            <img src="assets/admin/images/artikel/thumbnails/<?= $artikel['thumbnail']; ?>" alt="Thumbnail">
                         </div>
-                        <p><?= $a['isi_artikel']; ?></p>
+                        <p><?= $artikel['isi_artikel']; ?></p>
                     </div>
                 </div>
             </div>
@@ -34,11 +32,11 @@
                         <div class="knowledge-widget">
                             <div class="author">
                                 <div class="author-thumb">
-                                    <a href="#0"><img src="assets/images/cate/01.png" alt="cate"></a>
+                                    <img src="assets/images/cate/01.png" alt="cate">
                                 </div>
                                 <div class="author-content">
                                     <span class="by">Ditulis Oleh</span>
-                                    <h5 class="subtitle"><?= $a['nama']; ?></h5>
+                                    <h5 class="subtitle"><?= $artikel['nama']; ?></h5>
                                 </div>
                             </div>
                         </div>

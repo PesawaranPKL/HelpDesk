@@ -32,7 +32,7 @@
                                     <i class="bi bi-pencil-square"></i>
                                     <span class="ms-2">Edit Artikel </span>
                                 </a>
-                                <a href="<?php base_url() ?>/dashboard/admin/artikel/hapus" class="dropdown-item">
+                                <a href="/dashboard/admin/artikel/hapus/<?= $a['id_artikel']; ?>" class="dropdown-item">
                                     <i class="bi bi-trash"></i>
                                     <span class="ms-2">Hapus Artikel </span>
                                 </a>
@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="new-arrival-content position-relative">
-                                        <h4><a href="<?php base_url() ?>/detail_artikel"><?= $a['judul_artikel']; ?></a></h4>
+                                        <h4><a href="/dashboard/admin/artikel/details/<?= $a['id_artikel']; ?>"><?= $a['judul_artikel']; ?></a></h4>
                                         <p>Kategori Artikel: <span class="item"></span> <?= $a['kategori']; ?> </p>
                                         <p>Status Artikel: <span class="item"> <?= $a['status']; ?> <i class="bi bi-check-circle-fill"></i></span></p>
                                         <p>Penulis: <span class="item"><?= $a['nama']; ?></span></p>

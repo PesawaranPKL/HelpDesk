@@ -28,20 +28,9 @@ class ArtikelController extends BaseController
         return view('artikel/daftar_artikel', $data);
     }
 
-    public function user_articles()
+    public function article_details($id_artikel)
     {
-        $artikel = $this->artikelModel->get_artikel_all();
-
-        $data = [
-            'artikel' => $artikel
-        ];
-
-        return view('artikel/daftar_artikel_user', $data);
-    }
-
-    public function article_details()
-    {
-        $artikel = $this->artikelModel->findAll();
+        $artikel = $this->artikelModel->where(['id_artikel' => $id_artikel])->first();
 
         $data = [
             'artikel' => $artikel
@@ -83,6 +72,15 @@ class ArtikelController extends BaseController
             'thumbnail' => $namaThumbnail,
             'isi_artikel' => $this->request->getPost('isi_artikel')
         ]);
+
+        return redirect()->to('/dashboard/admin/artikel');
+    }
+
+    
+
+    public function delete_article($id_artikel)
+    {
+        $this->artikelModel->delete($id_artikel);
 
         return redirect()->to('/dashboard/admin/artikel');
     }

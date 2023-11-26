@@ -29,7 +29,7 @@
                     <div class="card">
                         <img class="card-img-top img-fluid" src="/assets/admin/images/artikel/thumbnails/<?= $a['thumbnail']; ?>" alt="Thumbnail">
                         <div class="card-body">
-                            <a href="<?php base_url() ?>/detail_artikel" class="popular-item px-2 position-relative">
+                            <a href="/dashboard/admin/artikel/details/<?= $a['id_artikel']; ?>" class="popular-item px-2 position-relative">
                                 <div class="popular-content pl-2">
                                     <span class="info"><?= $a['kategori']; ?></span>
                                     <p><?= $a['judul_artikel']; ?></p>
