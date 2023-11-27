@@ -233,7 +233,7 @@
 							<span class="nav-text">Arrtikel</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="#">Daftar Artikel</a></li>
+							<li><a href="<?php base_url() ?>/dashboard/admin/artikel">Daftar Artikel</a></li>
 							<li><a href="#">Nama Sidebar 1</a></li>
 							<li><a href="#">Nama Sidebar 2</a></li>
 							<li><a href="#">Nama Sidebar 3</a></li>

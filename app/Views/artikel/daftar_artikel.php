@@ -28,7 +28,7 @@
                             <img class="card-img-top img-fluid" src="/assets/admin/images/artikel/thumbnails/<?= $a['thumbnail']; ?>" alt="Thumbnail">
                             <a class="link" href="#" role="button" data-bs-toggle="dropdown"><i class="bi bi-chevron-down"></i></a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="<?php base_url() ?>/dashboard/admin/artikel/edit" class="dropdown-item">
+                                <a href="<?php base_url() ?>/dashboard/admin/artikel/edit/<?= base64_encode(base64_encode($a['id_artikel'])) ?>" class="dropdown-item">
                                     <i class="bi bi-pencil-square"></i>
                                     <span class="ms-2">Edit Artikel </span>
                                 </a>
@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="new-arrival-content position-relative">
-                                        <h4><a href="/dashboard/admin/artikel/details/<?= $a['id_artikel']; ?>"><?= $a['judul_artikel']; ?></a></h4>
+                                        <h4><a href="<?php base_url() ?>/artikel/detail/<?= $a['id_artikel']; ?>" target="_blank"><?= $a['judul_artikel']; ?></a></h4>
                                         <p>Kategori Artikel: <span class="item"></span> <?= $a['kategori']; ?> </p>
                                         <p>Status Artikel: <span class="item"> <?= $a['status']; ?> <i class="bi bi-check-circle-fill"></i></span></p>
                                         <p>Penulis: <span class="item"><?= $a['nama']; ?></span></p>

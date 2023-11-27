@@ -18,4 +18,18 @@ class ArtikelModel extends Model
             ->join('user_details', 'user_details.id_user=artikel.id_user')
             ->get()->getResultArray();
     }
+
+    public function one_artikel($id)
+    {
+        return $this->db->table('artikel')
+            ->join('kategori', 'kategori.id_kategori=artikel.id_kategori')
+            ->join('user_details', 'user_details.id_user=artikel.id_user')
+            ->where('id_artikel', $id)
+            ->get()->getRow();
+    }
+    public function updateartikel($dataupdate, $id)
+    {
+        return $this->db->table('artikel')
+        ->update($dataupdate, ['id_artikel' => $id]);
+    }
 }

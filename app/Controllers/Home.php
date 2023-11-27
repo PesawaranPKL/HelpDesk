@@ -27,5 +27,14 @@ class Home extends BaseController
 
         return view('artikel/daftar_artikel_user', $data);
     }
+    function article_details($judul) 
+    {
+        $artikel = $this->artikelModel->join('user_details', 'user_details.id_user=artikel.id_user')
+        ->where(['id_artikel' => $judul])->first();
+
+        $data['artikel'] = $artikel;
+
+        return view('artikel/detail_artikel', $data);
+    }
 
 }
