@@ -64,7 +64,7 @@ class ArtikelController extends BaseController
 
         $rules = [
             'judul_artikel' => [
-                'rules' => 'required|max_length[190]',
+                'rules' => 'required|trim|max_length[190]',
                 'errors' => [
                     'required' => 'judul harus di isi!',
                     'max_length' => 'Gunakan maksimal 190 karakter!'
