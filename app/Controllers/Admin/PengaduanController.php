@@ -10,9 +10,7 @@ class PengaduanController extends BaseController
     {
         //meload session
         $this->session = session();
-    }
-    public function index()
-    {
+        
         if (!$this->session->has('isLogin')) {
             return redirect()->to('login_sistem'); //login
         }
@@ -20,8 +18,13 @@ class PengaduanController extends BaseController
         if ($this->session->get('role') != 'admin') {
             return redirect()->to('login_sistem');
         }
-
-
+    }
+    public function index()
+    {
         return view('admin/daftar_pengaduan');
+    }
+    public function detail()
+    {   
+        return view('admin/detail_pengaduan');
     }
 }

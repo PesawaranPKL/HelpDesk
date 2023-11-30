@@ -404,6 +404,6 @@
             Content body end
         ***********************************-->
 
-<?= session()->get('role'); ?>
+<!-- <?= session()->get('role'); ?> -->
 
 <?= $this->endSection() ?>

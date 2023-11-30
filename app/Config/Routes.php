@@ -51,6 +51,7 @@ $routes->group('dashboard', static function ($routes) {
 
         /* ====================================== PENGADUAN ADMIN ================================================== */
         $routes->get('daftar_pengaduan', 'PengaduanController::index', ['namespace' => '\App\Controllers\Admin']);
+        $routes->get('detail_pengaduan', 'PengaduanController::detail', ['namespace' => '\App\Controllers\Admin']);
     });
 
     /* ====================================== Operator ================================================== */
