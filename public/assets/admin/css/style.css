@@ -29460,6 +29460,10 @@ table.dataTable thead th:active,table.dataTable thead td:active{outline:none}tab
   border: none;
 }
 
-.pesanSolusi{
+.pesanSolusi, .pesanSolusi:hover{
   color: #212529; font-size:medium;
+}
+
+.pesanSelesai:hover{
+  cursor: default;
 }
