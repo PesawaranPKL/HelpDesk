@@ -56,7 +56,7 @@
 															<svg width="24px" height="24px" viewbox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
 														</div>
 														<div class="dropdown-menu dropdown-menu-end">
-															<a class="dropdown-item" href="#">Proses Aduan</a>
+															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=sedang_diproses">Proses Aduan</a>
 															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=belum_diproses">Lihat Detail Aduan</a>
 														</div>
 													</div>
@@ -99,7 +99,7 @@
 															<svg width="24px" height="24px" viewbox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
 														</div>
 														<div class="dropdown-menu dropdown-menu-end">
-															<a class="dropdown-item" href="#">Solusi Aduan</a>
+															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=sedang_diproses">Solusi Aduan</a>
 															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=sedang_diproses">Lihat Detail Aduan</a>
 														</div>
 													</div>
@@ -141,7 +141,7 @@
 															<svg width="24px" height="24px" viewbox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
 														</div>
 														<div class="dropdown-menu dropdown-menu-end">
-															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan">Lihat Detail Aduan</a>
+															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=sudah_diproses">Lihat Detail Aduan</a>
 														</div>
 													</div>
 												</td>

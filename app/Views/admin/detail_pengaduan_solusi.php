@@ -75,12 +75,13 @@
                                     <li class="list-group-item Ltitik2">:</li>
                                     <li class="list-group-item Lisi"><a href="<?php base_url()?>/assets/admin/file/berkas.pdf" target="_blank" style="color:#000">Lihat Berkas</a></li>
                                 </ul>
-                                <h4 class="card-title mt-5 mb-3">Solusi Aduan</h4>
+                                <br><hr>
+                                <h4 class="card-title mt-3 mb-3">Solusi Aduan</h4>
                                 <div class="compose-content">
                                     <h5 class="mb-4"><i class="fa fa-comments" style="transform: rotate(0);"></i> Pesan Solusi</h5>
                                     <form action="#">
                                         <div class="mb-3">
-                                            <textarea id="email-compose-editor" class="textarea_editor form-control bg-transparent" rows="8" placeholder="Masukkan Pesan Disini..."></textarea>
+                                            <textarea id="email-compose-editor" class="textarea_editor form-control bg-transparent pesanSolusi" rows="6" placeholder="Masukkan Pesan Disini..."></textarea>
                                         </div>
                                     </form>
                                     <h5 class="mb-4"><i class="fa fa-paperclip"></i> Lampiran</h5>

@@ -29459,3 +29459,7 @@ table.dataTable thead th:active,table.dataTable thead td:active{outline:none}tab
 .detailAduan .list-group-item{
   border: none;
 }
+
+.pesanSolusi{
+  color: #212529; font-size:medium;
+}

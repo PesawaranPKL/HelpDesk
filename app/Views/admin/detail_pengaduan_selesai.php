@@ -20,36 +20,28 @@
                         <div class="card">
                             <div class="card-header">
                                 <!-- GET Nama Pengadu -->
-                                <h4 class="card-title">Detail Pengaduan - Siti Kholisah Aulia</h4>
-                                <div class="dropdown ms-auto text-start">
-                                    <div class="btn-link" data-bs-toggle="dropdown">
-                                        <svg width="24px" height="24px" viewbox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-                                    </div>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=sedang_diproses">Proses Aduan</a>
-                                    </div>
-                                </div>
+                                <h4 class="card-title">Detail Pengaduan - Wulan Destyaningsih</h4>
                             </div>
                             <div class="card-body detailAduan">
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>Status Pengaduan</h6></li>
                                     <li class="list-group-item Ltitik2">:</li>
-                                    <li class="list-group-item Lisi">
-                                        <span class="badge light badge-danger">
-                                            <i class="fa fa-circle text-danger me-1"></i>
-                                            Belum Diproses
+                                    <li class="list-group-item Lisi">                           
+                                        <span class="badge light badge-success">
+                                            <i class="fa fa-circle text-success me-1"></i>
+                                            Selesai Diproses
                                         </span>
                                     </li>
                                 </ul>
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>ID</h6></li>
                                     <li class="list-group-item Ltitik2">:</li>
-                                    <li class="list-group-item Lisi">#H001</li>
+                                    <li class="list-group-item Lisi">#H003</li>
                                 </ul>
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>Nama Pengadu</h6></li>
                                     <li class="list-group-item Ltitik2">:</li>
-                                    <li class="list-group-item Lisi">Siti Kholisah Aulia</li>
+                                    <li class="list-group-item Lisi">Wulan Destyaningsih</li>
                                 </ul>
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>Nama Instansi</h6></li>
@@ -59,12 +51,12 @@
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>Email</h6></li>
                                     <li class="list-group-item Ltitik2">:</li>
-                                    <li class="list-group-item Lisi">user01@gmail.com</li>
+                                    <li class="list-group-item Lisi">user03@gmail.com</li>
                                 </ul>
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>No HP</h6></li>
                                     <li class="list-group-item Ltitik2">:</li>
-                                    <li class="list-group-item Lisi">089521214343</li>
+                                    <li class="list-group-item Lisi">0857890766890</li>
                                 </ul>
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item Ljdl"><h6>Kategori Aduan</h6></li>
@@ -75,8 +67,7 @@
                                     <li class="list-group-item Ljdl"><h6>Deskripsi</h6></li>
                                     <li class="list-group-item Ltitik2">:</li>
                                     <li class="list-group-item Lisi">
-                                        Saya ingin melaporkan masalah seringnya putusnya koneksi jaringan internet yang saya alami. Dalam beberapa minggu terakhir, saya mengalami gangguan yang menyebabkan putusnya koneksi secara tiba-tiba. Masalah ini menghambat produktivitas kerja saya dan mengganggu aktivitas online saya.
-                                        Saya telah mencoba mereset router dan memeriksa kabel-kabel, namun masalah ini tetap berlanjut. Mohon bantuan untuk mengatasi masalah ini dengan segera, agar saya dapat menggunakan layanan internet dengan lancar.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ullam temporibus dolorum voluptate sint impedit recusandae voluptates, pariatur repellat. Neque necessitatibus voluptatem commodi nisi ratione autem ipsa hic dolorem ut.
                                     </li>
                                 </ul>
                                 <ul class="list-group list-group-horizontal">
@@ -84,6 +75,27 @@
                                     <li class="list-group-item Ltitik2">:</li>
                                     <li class="list-group-item Lisi"><a href="<?php base_url()?>/assets/admin/file/berkas.pdf" target="_blank" style="color:#000">Lihat Berkas</a></li>
                                 </ul>
+                                <br><hr>
+                                <h4 class="card-title mt-3 mb-3">Hasil Solusi Aduan</h4>
+                                <div class="compose-content mb-3">
+                                    <h5 class="mb-4"><i class="fa fa-comments" style="transform: rotate(0);"></i> Pesan Solusi</h5>
+                                    <textarea class="form-control pesanSolusi" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum que laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta su Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, tempore quam aliquam quas ipsum rerum vero inventore corrupti, harum, optio animi ad natus libero? Sit fuga quod suscipit aut voluptates. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quod cum enim delectus molestiae, praesentium deserunt officiis saepe, corporis, minima laboriosam! Itaque architecto dicta odit atque, aut nisi veritatis suscipit.</textarea><br>                     
+                                    <div class="read-content-attachment">
+                                        <h6><i class="fa fa-download mb-2"></i> Lampiran
+                                            <span>(3)</span></h6>
+                                        <div class="row attachment">
+                                            <div class="col-auto">
+                                                <a href="#" class="text-muted">Lampiran-Photo.png</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="text-muted">Lampiran-File1.docx</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="text-muted">Lampiran-File2.pdf</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
