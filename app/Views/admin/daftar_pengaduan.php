@@ -62,6 +62,7 @@
 													</div>
 												</td>												
                                             </tr>
+                                            <!-- Start Menampilkan Detail Deskripsi menggunakan ID pada kolom yang di merge -->
                                             <tr>
                                                 <td colspan="8">
                                                     <div class="collapse" id="collapseCol1">
@@ -72,6 +73,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <!-- End Menampilkan Detail Deskripsi menggunakan ID pada kolom yang di merge -->
                                             <tr>
                                                 <td>#H002</td>
                                                 <td>Fadila Eka Noperta</td>
@@ -103,6 +105,7 @@
 													</div>
 												</td>
                                             </tr>
+                                            <!-- Start Menampilkan Detail Deskripsi menggunakan ID pada kolom yang di merge -->
                                             <tr>
                                                 <td colspan="8">
                                                     <div class="collapse" id="collapseCol2">
@@ -112,6 +115,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <!-- End Menampilkan Detail Deskripsi menggunakan ID pada kolom yang di merge -->
                                             <tr>
                                                 <td>#H003</td>
                                                 <td>Wulan Destyaningsih</td>
@@ -142,6 +146,7 @@
 													</div>
 												</td>
                                             </tr>
+                                            <!-- Start Menampilkan Detail Deskripsi menggunakan ID pada kolom yang di merge -->
                                             <tr>
                                                 <td colspan="8">
                                                     <div class="collapse" id="collapseCol3">
@@ -151,6 +156,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <!-- End Menampilkan Detail Deskripsi menggunakan ID pada kolom yang di merge -->
                                         </tbody>
                                     </table>
                                 </div>

@@ -544,7 +544,7 @@ select {
 [list]::-webkit-calendar-picker-indicator {
   display: none; }
 
-button,
+/* button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -553,7 +553,7 @@ button,
   [type="button"]:not(:disabled),
   [type="reset"]:not(:disabled),
   [type="submit"]:not(:disabled) {
-    cursor: pointer; }
+    cursor: pointer; } */
 
 ::-moz-focus-inner {
   padding: 0;
@@ -593,9 +593,9 @@ legend {
 ::-webkit-inner-spin-button {
   height: auto; }
 
-[type="search"] {
+/* [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: textfield; }
+  -webkit-appearance: textfield; } */
 
 /* rtl:raw:
 [type="tel"],
@@ -1983,7 +1983,8 @@ textarea.form-control-lg {
   background-size: contain;
   border: 1px solid rgba(0, 0, 0, 0.25);
   appearance: none;
-  color-adjust: exact; }
+  /* color-adjust: exact;  */
+}
   .form-check-input[type="checkbox"] {
     border-radius: 0.25em; }
   .form-check-input[type="radio"] {
@@ -11220,14 +11221,15 @@ svg.pulse-svg {
   .rtl .float-xxl-none {
     float: none !important; } }
 
-[direction="rtl"] {
-  /* .text-right {
+/* [direction="rtl"] {
+  .text-right {
           text-align: left !important;
       }
 
       .text-left {
           text-align: right !important;
-      } */ }
+      }
+    } */ 
   [direction="rtl"][data-theme-version="dark"] .border, [direction="rtl"][data-theme-version="dark"] .border-left, [direction="rtl"][data-theme-version="dark"] .border-right {
     border-color: #333a54 !important; }
   [direction="rtl"] .border-right {
@@ -11527,8 +11529,8 @@ svg.pulse-svg {
   [direction="rtl"][data-sidebar-style="modern"] .deznav .metismenu li > a i {
     padding: 0; }
 
-[direction="rtl"] {
-  /* ===== Light gallery ===== */ }
+/*[direction="rtl"] {
+   ===== Light gallery =====  }*/
   [direction="rtl"] .select2-container--default .select2-selection--single .select2-selection__arrow {
     left: 15px;
     right: auto; }
@@ -12002,9 +12004,9 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 
 .bell img {
   -webkit-animation: ring 8s .7s ease-in-out infinite;
-  -webkit-transform-origin: 50% 4px;
+  /* -webkit-transform-origin: 50% 4px; */
   -moz-animation: ring 8s .7s ease-in-out infinite;
-  -moz-transform-origin: 50% 4px;
+  /* -moz-transform-origin: 50% 4px; */
   animation: ring 8s .7s ease-in-out infinite; }
 
 @-webkit-keyframes ring {
@@ -13883,11 +13885,11 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     background: #fff;
     margin: 0px 0px 30px 0px;
     background: -webkit-linear-gradient(#40189d, #972ab3);
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
     -webkit-text-fill-color: transparent; }
     .sidebar-right .sidebar-right-inner > h4 a, .sidebar-right .sidebar-right-inner > .h4 a {
       background: var(--primary);
-      -webkit-background-clip: unset;
+      /* -webkit-background-clip: unset; */
       -webkit-text-fill-color: #fff; }
   .sidebar-right .admin-settings {
     height: calc(100% - 100px);
@@ -14440,7 +14442,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       font-weight: 700;
       font-size: 28px;
       background: -webkit-linear-gradient(#40189d, #972ab3);
-      -webkit-background-clip: text;
+      /* -webkit-background-clip: text; */
       -webkit-text-fill-color: transparent; }
   .dz-demo-panel .dz-demo-bx {
     height: 200px;
@@ -18475,7 +18477,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     transition-duration: 0.05s; }
 
 .mail-list a {
-  vertical-align: middle;
+  /* vertical-align: middle; */
   padding: 0.625rem 0.9375rem;
   display: block;
   background: transparent;
@@ -19521,15 +19523,15 @@ svg text {
     background: #251e35;
     border-color: #333a54; }
 
-.input-group {
-  /* &> .form-file {
+/*.input-group {
+   &> .form-file {
 		display: flex;
 		align-items: center;
 
 		&:not(:last-child) .form-file-label,
 		&:not(:last-child) .form-file-label::after { @include border-right-radius(0); }
 		&:not(:first-child) .form-file-label { @include border-left-radius(0); }
-	  } */ }
+	  } }*/ 
   .input-group > .form-control-plaintext,
   .input-group > .form-select,
   .input-group > .form-file {
@@ -20401,7 +20403,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 .weather-one h2, .weather-one .h2 {
   display: inline-block;
-  float: right;
+  /* float: right; */
   font-size: 4.8rem; }
 
 .weather-one .city {
@@ -22264,7 +22266,8 @@ button {
   display: inline-block;
   margin: -0.5rem 0.75rem -0.5rem -1.188rem;
   padding: 0.5rem 0.80rem 0.5rem;
-  float: left; }
+  /* float: left; */
+ }
   @media only screen and (max-width: 1400px) {
     .btn-icon-start {
       margin: -0.5rem 0.75rem -0.5rem -0.880rem; } }
@@ -27924,14 +27927,14 @@ table.table {
   .rtl .float-xxl-none {
     float: none !important; } }
 
-[direction="rtl"] {
-  /* .text-right {
+/*[direction="rtl"] {
+   .text-right {
           text-align: left !important;
       }
 
       .text-left {
           text-align: right !important;
-      } */ }
+      } }*/ 
   [direction="rtl"][data-theme-version="dark"] .border, [direction="rtl"][data-theme-version="dark"] .border-left, [direction="rtl"][data-theme-version="dark"] .border-right {
     border-color: #333a54 !important; }
   [direction="rtl"] .border-right {
@@ -28231,8 +28234,8 @@ table.table {
   [direction="rtl"][data-sidebar-style="modern"] .deznav .metismenu li > a i {
     padding: 0; }
 
-[direction="rtl"] {
-  /* ===== Light gallery ===== */ }
+/*[direction="rtl"] {
+   ===== Light gallery =====  }*/
   [direction="rtl"] .select2-container--default .select2-selection--single .select2-selection__arrow {
     left: 15px;
     right: auto; }
