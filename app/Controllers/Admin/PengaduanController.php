@@ -23,8 +23,12 @@ class PengaduanController extends BaseController
     {
         return view('admin/daftar_pengaduan');
     }
-    public function detail()
+    public function detail_proses()
     {   
-        return view('admin/detail_pengaduan');
+        return view('admin/detail_pengaduan_proses');
+    }
+    public function detail_solusi()
+    {   
+        return view('admin/detail_pengaduan_solusi');
     }
 }

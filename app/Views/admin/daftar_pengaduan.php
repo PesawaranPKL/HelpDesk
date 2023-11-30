@@ -25,7 +25,7 @@
                                                 <th>Nama Instansi</th>
                                                 <th>Kategori Aduan</th>
                                                 <th>Deskripsi</th>
-                                                <th>Berkas</th>
+                                                <th>File Pendukung</th>
                                                 <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -37,7 +37,7 @@
                                                 <td>Dinas Kominfo</td>
                                                 <td>Jaringan</td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-primary p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol1" aria-expanded="false" aria-controls="collapseExample">
+                                                    <button class="btn btn-primary btn-xxs shadow p-2 mt-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol1" aria-expanded="false" aria-controls="collapseExample">
                                                     Lihat Detail
                                                     </button>                                                    
                                                 </td>
@@ -57,7 +57,7 @@
 														</div>
 														<div class="dropdown-menu dropdown-menu-end">
 															<a class="dropdown-item" href="#">Proses Aduan</a>
-															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan">Lihat Detail Aduan</a>
+															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=belum_diproses">Lihat Detail Aduan</a>
 														</div>
 													</div>
 												</td>												
@@ -80,7 +80,7 @@
 												<td>Dinas Kominfo</td>
                                                 <td>Jaringan</td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-primary p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol2" aria-expanded="false" aria-controls="collapseExample">
+                                                    <button class="btn btn-primary btn-xxs shadow p-2 mt-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol2" aria-expanded="false" aria-controls="collapseExample">
                                                     Lihat Detail
                                                     </button>
                                                 </td>
@@ -100,7 +100,7 @@
 														</div>
 														<div class="dropdown-menu dropdown-menu-end">
 															<a class="dropdown-item" href="#">Solusi Aduan</a>
-															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan">Lihat Detail Aduan</a>
+															<a class="dropdown-item" href="<?php base_url()?>/dashboard/admin/detail_pengaduan=sedang_diproses">Lihat Detail Aduan</a>
 														</div>
 													</div>
 												</td>
@@ -122,7 +122,7 @@
 												<td>Dinas Kominfo</td>
                                                 <td>Jaringan</td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-primary p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol3" aria-expanded="false" aria-controls="collapseExample">
+                                                    <button class="btn btn-primary btn-xxs shadow p-2 mt-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol3" aria-expanded="false" aria-controls="collapseExample">
                                                     Lihat Detail
                                                     </button>
                                                 </td>

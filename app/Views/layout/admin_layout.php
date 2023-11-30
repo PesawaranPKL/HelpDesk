@@ -25,6 +25,7 @@
 	<link href="<?php base_url()?>/assets/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="<?php base_url()?>/assets/admin/vendor/LineIcons.css" rel="stylesheet">
     <link href="<?php base_url()?>/assets/admin/css/style.css" rel="stylesheet">
+	<link href="<?php base_url()?>/assets/admin/vendor/dropzone/dist/dropzone.css" rel="stylesheet">
 
 </head>
 <body>
@@ -261,6 +262,7 @@
 	<!-- Dashboard 1 -->
 	<script src="<?php base_url()?>/assets/admin/js/dashboard/dashboard-1.js"></script>
 	
+	<script src="<?php base_url()?>/assets/admin/vendor/dropzone/dist/dropzone.js"></script>
     <script src="<?php base_url()?>/assets/admin/js/custom.min.js"></script>
 	<script src="<?php base_url()?>/assets/admin/js/deznav-init.js"></script>
 	<script src="<?php base_url()?>/assets/admin/js/demo.js"></script>
