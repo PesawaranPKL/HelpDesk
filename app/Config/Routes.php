@@ -48,6 +48,9 @@ $routes->group('dashboard', static function ($routes) {
 			$routes->get('hapus/(:segment)', 'ArtikelController::delete_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
 
         });
+
+        /* ====================================== PENGADUAN ADMIN ================================================== */
+        $routes->get('daftar_pengaduan', 'PengaduanController::index', ['namespace' => '\App\Controllers\Admin']);
     });
 
     /* ====================================== Operator ================================================== */
