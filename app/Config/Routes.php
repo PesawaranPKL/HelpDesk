@@ -14,8 +14,7 @@ $routes->get('/reset_password', 'Auth::reset_pw');
 $routes->get('/password_baru/(:segment)', 'Auth::pw_baru/$1');
 $routes->post('/password_baru', 'Auth::validasi_pw_baru');
 
-// $routes->get('/artikel_user', 'Home::user_articles');
-// $routes->get('/detail_artikel', 'Home::article_details');
+
 $routes->get('artikel', 'Home::user_articles');
 $routes->group('artikel', static function ($routes) {
     $routes->get('detail/(:segment)', 'Home::article_details/$1');

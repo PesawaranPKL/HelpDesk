@@ -19,22 +19,24 @@ class Home extends BaseController
 
     public function user_articles()
     {
+        //get all the articles from the database
         $artikel = $this->artikelModel->get_artikel_all();
 
         $data = [
             'artikel' => $artikel
         ];
 
-        return view('artikel/daftar_artikel_user', $data);
+        return view('artikel/user/daftar_artikel', $data);
     }
-    function article_details($judul) 
+
+    function article_details($id) 
     {
-        $artikel = $this->artikelModel->join('user_details', 'user_details.id_user=artikel.id_user')
-        ->where(['id_artikel' => $judul])->first();
+        //get one article by $id
+        $artikel = $this->artikelModel->one_artikel($id);
 
         $data['artikel'] = $artikel;
 
-        return view('artikel/detail_artikel', $data);
+        return view('artikel/user/detail_artikel', $data);
     }
 
 }

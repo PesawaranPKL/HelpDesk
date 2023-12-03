@@ -27,9 +27,20 @@ class ArtikelModel extends Model
             ->where('id_artikel', $id)
             ->get()->getRow();
     }
+
     public function updateartikel($dataupdate, $id)
     {
         return $this->db->table('artikel')
-        ->update($dataupdate, ['id_artikel' => $id]);
+            ->update($dataupdate, ['id_artikel' => $id]);
+    }
+
+    public function getArtikelThumbnailById($id)
+    {
+        $result = $this->db->table('artikel')
+            ->select('thumbnail')
+            ->where('id_artikel', $id)
+            ->get()->getRow();
+
+        return $result ? $result->thumbnail : null;
     }
 }

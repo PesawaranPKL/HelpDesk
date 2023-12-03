@@ -262,7 +262,7 @@
 	<script src="<?php base_url() ?>/assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="<?php base_url() ?>/assets/admin/vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="<?php base_url() ?>/assets/admin/vendor/owl-carousel/owl.carousel.js"></script>
-	<script src="/assets/admin/vendor/ckeditor/ckeditor.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/vendor/ckeditor/ckeditor.js"></script>
 
 
 	<!-- Chart piety plugin files -->
