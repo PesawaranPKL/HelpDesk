@@ -14,10 +14,11 @@ $routes->get('/reset_password', 'Auth::reset_pw');
 $routes->get('/password_baru/(:segment)', 'Auth::pw_baru/$1');
 $routes->post('/password_baru', 'Auth::validasi_pw_baru');
 
-// $routes->get('/artikel_admin', 'Admin\ArtikelController::index');
-// $routes->get('/tambah', 'Admin\ArtikelController::input_article');
-$routes->get('/artikel_user', 'Admin\ArtikelController::user_articles');
-$routes->get('/detail_artikel', 'Admin\ArtikelController::article_details');
+
+$routes->get('artikel', 'Home::user_articles');
+$routes->group('artikel', static function ($routes) {
+    $routes->get('detail/(:segment)', 'Home::article_details/$1');
+});
 
 
 $routes->get('/ganti_email', 'Auth::ganti_email');
@@ -41,11 +42,12 @@ $routes->group('dashboard', static function ($routes) {
         $routes->group('artikel', static function ($routes) {
             $routes->get('tambah', 'ArtikelController::add_article', ['namespace' => '\App\Controllers\Admin' ]);
             $routes->post('tambah', 'ArtikelController::input_article', ['namespace' => '\App\Controllers\Admin' ]);
-
-			$routes->get('details/(:segment)', 'ArtikelController::data/$1', ['namespace' => '\App\Controllers\Admin' ]);
-			$routes->get('edit/(:segment)', 'ArtikelController::edit_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
-			$routes->post('edit/(:segment)', 'ArtikelController::update_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
-			$routes->get('hapus/(:segment)', 'ArtikelController::delete_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
+            
+            // $routes->get('details/(:segment)', 'ArtikelController::article_details/$1', ['namespace' => '\App\Controllers\Admin' ]);
+                
+            $routes->get('edit/(:segment)', 'ArtikelController::edit_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
+            $routes->post('edit/(:segment)', 'ArtikelController::update_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
+            $routes->get('hapus/(:segment)', 'ArtikelController::delete_article/$1', ['namespace' => '\App\Controllers\Admin' ]);
 
         });
     });

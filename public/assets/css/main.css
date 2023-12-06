@@ -3363,7 +3363,6 @@ footer {
     border-radius: 10px;
     border: 1px solid #ccb5f6;
     padding: 30px 20px;
-    margin-bottom: 30px;
     color: #504c89;
     -webkit-transition: all ease 0.3s;
     -moz-transition: all ease 0.3s;
@@ -3383,7 +3382,6 @@ footer {
 
 .popular-item .popular-content {
     width: calc(100% - 35px);
-    padding-left: 20px;
 }
 
 .popular-item .popular-content .info {
