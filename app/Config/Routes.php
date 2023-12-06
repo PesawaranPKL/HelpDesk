@@ -5,7 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+// USER PAGE
 $routes->get('/', 'Home::index');
+$routes->get('pengaduan', 'PengaduanController::index');
+
 $routes->get('/login_sistem', 'Auth::index');
 $routes->get('/registrasi', 'Auth::regis');
 $routes->get('/lupa_password', 'Auth::lupa_pw');

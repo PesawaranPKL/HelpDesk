@@ -58,7 +58,7 @@
                         <a href="#">FAQ</a>
                     </li>
                     <li class="d-md-none text-center">
-                        <a href="#" class="m-0 header-button">Adukan Sekarang</a>
+                        <a href="<?php base_url()?>/pengaduan" class="m-0 header-button">Adukan Sekarang</a>
                     </li>
                 </ul>
                 <div class="header-bar d-lg-none">
@@ -67,7 +67,7 @@
                     <span></span>
                 </div>
                 <div class="header-right">
-                    <a href="#" class="header-button d-none d-md-inline-block">Adukan Sekarang</a>
+                    <a href="<?php base_url()?>/pengaduan" class="header-button d-none d-md-inline-block">Adukan Sekarang</a>
                 </div>
             </div>
         </div>
