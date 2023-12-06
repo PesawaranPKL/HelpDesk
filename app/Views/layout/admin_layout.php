@@ -240,7 +240,7 @@
             Sidebar end
         ***********************************-->
 
-        <?= $this->renderSection('content') ?>		
+        <?= $this->renderSection('content') ?>
 
     </div>
     <!--**********************************
