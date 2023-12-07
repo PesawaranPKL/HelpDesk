@@ -10,7 +10,8 @@ class Notofikasi extends Seeder
 	{
 		$notifikasi_data = [
 			[
-                'id_pengaduan'  => 1
+                'id_pengaduan'  => 1,
+				'id_user'  => 1
 			],
 		];
 
