@@ -238,11 +238,21 @@
 							<li><a href="#">Nama Sidebar 2</a></li>
 							<li><a href="#">Nama Sidebar 3</a></li>
 							<li><a href="#">Nama Sidebar 4</a></li>
+					<li>
+						<a href="javascript:void()" class="has-arrow" aria-expanded="false">
+							<i class="fa fa-question-circle"></i>
+							<span class="nav-label">FAQ</span>
+						</a>
+						<ul class="nav nav-second-level collapse" aria-expanded="false">
+							<li><a href="ticket_approval.php">Ticket Approval</a></li>
+							<li><a href="my_ticket.php">My Ticket</a></li>
 						</ul>
-					</li>
+					</li>		
 				</ul>
-			</div>
-		</div>
+			</li>
+		</ul>
+	</div>
+</div>
 		<!--**********************************
             Sidebar end
         ***********************************-->
