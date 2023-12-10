@@ -223,14 +223,15 @@
 		<div class="deznav">
 			<div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-					<li><a href="<?php base_url() ?>/dashboard" class="ai-icon" aria-expanded="false">
+				<a href="<?php base_url() ?>/dashboard" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-					<li class="has-menu"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
-							<span class="nav-text">Arrtikel</span>
+							<span class="nav-text">Artikel</span>
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="<?php base_url() ?>/dashboard/admin/artikel">Daftar Artikel</a></li>
@@ -238,21 +239,21 @@
 							<li><a href="#">Nama Sidebar 2</a></li>
 							<li><a href="#">Nama Sidebar 3</a></li>
 							<li><a href="#">Nama Sidebar 4</a></li>
-					<li>
-						<a href="javascript:void()" class="has-arrow" aria-expanded="false">
-							<i class="fa fa-question-circle"></i>
-							<span class="nav-label">FAQ</span>
-						</a>
-						<ul class="nav nav-second-level collapse" aria-expanded="false">
-							<li><a href="ticket_approval.php">Ticket Approval</a></li>
-							<li><a href="my_ticket.php">My Ticket</a></li>
 						</ul>
-					</li>		
+					</li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-help-1"></i>
+							<span class="nav-text">FAQ</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="#">Ticket Approval</a></li>
+							<li><a href="#">My Ticket</a></li>
+						</ul>
+					</li>
 				</ul>
-			</li>
-		</ul>
-	</div>
-</div>
+			</div>
+		</div>
 		<!--**********************************
             Sidebar end
         ***********************************-->
