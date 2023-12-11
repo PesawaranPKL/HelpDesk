@@ -13,20 +13,19 @@
 	<meta property="og:description" content="Jobie : Job Portal  Admin  Bootstrap 5 Template">
 	<meta property="og:image" content="https://jobie.dexignzone.com/xhtml/social-image.png">
 	<meta name="format-detection" content="telephone=no">
-	<title>Dashboard Admin Helpdesk</title>
-	<!-- Favicon icon -->
-	<link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo1.png" type="image/x-icon">
-	<link href="<?php base_url() ?>/assets/admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="<?php base_url() ?>/assets/admin/vendor/chartist/css/chartist.min.css">
-	<!-- Vectormap -->
-	<link href="<?php base_url() ?>/assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	<link href="<?php base_url() ?>/assets/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
-	<link href="<?php base_url() ?>/assets/admin/vendor/LineIcons.css" rel="stylesheet">
-	<link href="<?php base_url() ?>/assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	<link href="<?php base_url() ?>/assets/admin/css/style.css" rel="stylesheet">
-	<!-- Bootstrap Icon -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <title>Dashboard Admin Helpdesk</title>
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo1.png" type="image/x-icon">
+    <link href="<?php base_url()?>/assets/admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php base_url()?>/assets/admin/vendor/chartist/css/chartist.min.css">
+	<!-- Datatable -->
+	<link rel="stylesheet" href="<?php base_url()?>assets/admin/vendor/datatables/css/jquery.dataTables.min.css">
+	<!-- Custom Stylesheet -->
+    <link href="<?php base_url()?>/assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="<?php base_url()?>/assets/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+	<link href="<?php base_url()?>/assets/admin/vendor/LineIcons.css" rel="stylesheet">
+    <link href="<?php base_url()?>/assets/admin/css/style.css" rel="stylesheet">
+	<link href="<?php base_url()?>/assets/admin/vendor/dropzone/dist/dropzone.css" rel="stylesheet">
 
 </head>
 
@@ -87,7 +86,7 @@
 						<ul class="navbar-nav header-right">
 							<li class="nav-item">
 								<div class="input-group search-area d-xl-inline-flex d-none">
-									<input type="text" class="form-control" placeholder="Search something here...">
+									<input type="text" class="form-control" placeholder="Cari...">
 									<div class="input-group-append">
 										<button class="input-group-text"><i class="flaticon-381-search-2"></i></button>
 									</div>
@@ -233,14 +232,14 @@
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Artikel</span>
 						</a>
-						<ul aria-expanded="false">
-							<li><a href="<?php base_url() ?>/dashboard/admin/artikel">Daftar Artikel</a></li>
-							<li><a href="#">Nama Sidebar 1</a></li>
-							<li><a href="#">Nama Sidebar 2</a></li>
-							<li><a href="#">Nama Sidebar 3</a></li>
-							<li><a href="#">Nama Sidebar 4</a></li>
-						</ul>
-					</li>
+                        <ul aria-expanded="false">
+                            <li><a href="<?php base_url() ?>/dashboard/admin/artikel">Daftar Artikel</a></li>
+                            <li><a href="#">Nama Sidebar 1</a></li>
+                            <li><a href="#">Nama Sidebar 2</a></li>
+                            <li><a href="#">Nama Sidebar 3</a></li>
+                            <li><a href="#">Nama Sidebar 4</a></li>
+                        </ul>
+                    </li>
 					<li class="has-menu">
 						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-help-1"></i>
@@ -251,14 +250,19 @@
 							<li><a href="#">List FAQ</a></li>
 						</ul>
 					</li>
-				</ul>
+                    <li><a href="<?php base_url()?>/dashboard/admin/daftar_pengaduan" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-incoming-call"></i>
+							<span class="nav-text">Daftar Pengaduan</span>
+						</a>
+					</li>
+                </ul>
 			</div>
 		</div>
 		<!--**********************************
             Sidebar end
         ***********************************-->
 
-		<?= $this->renderSection('content') ?>
+        <?= $this->renderSection('content') ?>
 
 	</div>
 	<!--**********************************
@@ -280,12 +284,18 @@
 	<script src="<?php base_url() ?>/assets/admin/vendor/peity/jquery.peity.min.js"></script>
 
 	<!-- Dashboard 1 -->
-	<script src="<?php base_url() ?>/assets/admin/js/dashboard/dashboard-1.js"></script>
-
-	<script src="<?php base_url() ?>/assets/admin/js/custom.min.js"></script>
-	<script src="<?php base_url() ?>/assets/admin/js/deznav-init.js"></script>
-	<script src="<?php base_url() ?>/assets/admin/js/demo.js"></script>
-	<script src="<?php base_url() ?>/assets/admin/js/styleSwitcher.js"></script>
+	<script src="<?php base_url()?>/assets/admin/js/dashboard/dashboard-1.js"></script>
+	
+	<script src="<?php base_url()?>/assets/admin/vendor/dropzone/dist/dropzone.js"></script>
+    <script src="<?php base_url()?>/assets/admin/js/custom.min.js"></script>
+	<script src="<?php base_url()?>/assets/admin/js/deznav-init.js"></script>
+	<script src="<?php base_url()?>/assets/admin/js/demo.js"></script>
+    <script src="<?php base_url()?>/assets/admin/js/styleSwitcher.js"></script>
+	
+	<!-- Datatable -->
+    <script src="<?php base_url()?>/assets/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php base_url()?>/assets/admin/js/plugins-init/datatables.init.js"></script>
+	
 	<script>
 		function carouselReview() {
 			/*  testimonial one function by = owl.carousel.js */
