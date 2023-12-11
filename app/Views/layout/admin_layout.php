@@ -247,8 +247,8 @@
 							<span class="nav-text">FAQ</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="#">Ticket Approval</a></li>
-							<li><a href="#">My Ticket</a></li>
+							<li><a href="#">Buat FAQ</a></li>
+							<li><a href="#">List FAQ</a></li>
 						</ul>
 					</li>
 				</ul>
