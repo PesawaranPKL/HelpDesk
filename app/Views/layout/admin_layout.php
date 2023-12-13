@@ -57,9 +57,9 @@
 		<div class="nav-header">
 			<a href="<?php base_url() ?>/dashboard" class="brand-logo">
 				<center>
-					<img class="logo1" src="<?php base_url() ?>/assets/images/logo1.png" alt="">
+					<img class="logo1" src="<?php base_url() ?>/assets/images/logo/logo-B1.png" alt="Logo Helpdesk">
 				</center>
-				<img class="logo2 brand-title" src="<?php base_url() ?>/assets/images/logo2.png" alt="">
+				<img class="logo2 brand-title" src="<?php base_url() ?>/assets/images/logo/logo-B2.png" alt="Logo Helpdesk">
 			</a>
 			<div class="nav-control">
 				<div class="hamburger">
@@ -87,7 +87,7 @@
 						<ul class="navbar-nav header-right">
 							<li class="nav-item">
 								<div class="input-group search-area d-xl-inline-flex d-none">
-									<input type="text" class="form-control" placeholder="Search something here...">
+									<input type="text" class="form-control" placeholder="Cari...">
 									<div class="input-group-append">
 										<button class="input-group-text"><i class="flaticon-381-search-2"></i></button>
 									</div>
@@ -228,17 +228,10 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-					<li class="has-menu"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+					<li><a href="<?php base_url() ?>/dashboard/admin/artikel" class="ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
-							<span class="nav-text">Arrtikel</span>
+							<span class="nav-text">Artikel</span>
 						</a>
-						<ul aria-expanded="false">
-							<li><a href="<?php base_url() ?>/dashboard/admin/artikel">Daftar Artikel</a></li>
-							<li><a href="#">Nama Sidebar 1</a></li>
-							<li><a href="#">Nama Sidebar 2</a></li>
-							<li><a href="#">Nama Sidebar 3</a></li>
-							<li><a href="#">Nama Sidebar 4</a></li>
-						</ul>
 					</li>
 				</ul>
 			</div>

@@ -43,4 +43,13 @@ class ArtikelModel extends Model
 
         return $result ? $result->thumbnail : null;
     }
+
+    public function searchArtikelByTitle($keyword)
+    {
+        return $this->select('artikel.*, kategori.kategori, user_details.nama')
+            ->join('kategori', 'kategori.id_kategori=artikel.id_kategori')
+            ->join('user_details', 'user_details.id_user=artikel.id_user')
+            ->like('judul_artikel', $keyword)
+            ->findAll();
+    }
 }

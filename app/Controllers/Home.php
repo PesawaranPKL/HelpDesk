@@ -15,28 +15,35 @@ class Home extends BaseController
     public function __construct()
     {
         $this->artikelModel = new ArtikelModel();
+        helper(['url', 'request']);
     }
 
     public function user_articles()
     {
-        //get all the articles from the database
-        $artikel = $this->artikelModel->get_artikel_all();
+        $keyword = $this->request->getVar('keyword');
+
+        // Jika 'keyword' pencarian disediakan, filter artikel berdasarkan 'judul_artikel'
+        if ($keyword) {
+            $artikel = $this->artikelModel->searchArtikelByTitle($keyword);
+        } else {
+            // Jika tidak ada 'keyword' pencarian, ambil semua artikel
+            $artikel = $this->artikelModel->get_artikel_all();
+        }
 
         $data = [
             'artikel' => $artikel
         ];
 
-        return view('artikel/user/daftar_artikel', $data);
+        return view('daftar_artikel', $data);
     }
 
-    function article_details($id) 
+    function article_details($id)
     {
-        //get one article by $id
+        // Ambil satu artikel menggunakan $id
         $artikel = $this->artikelModel->one_artikel($id);
 
         $data['artikel'] = $artikel;
 
-        return view('artikel/user/detail_artikel', $data);
+        return view('detail_artikel', $data);
     }
-
 }

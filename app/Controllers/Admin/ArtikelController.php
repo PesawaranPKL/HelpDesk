@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\ArtikelModel;
 use App\Models\KategoriModel;
+use CodeIgniter\Pager\Pager;
 use Config\Services;
 
 class ArtikelController extends BaseController
@@ -17,19 +18,18 @@ class ArtikelController extends BaseController
         $this->session = Services::session();
         $this->artikelModel = new ArtikelModel();
         $this->kategoriModel = new KategoriModel();
+        $this->pager = \Config\Services::pager();
     }
 
     public function index()
-
     {
-
         $artikel = $this->artikelModel->get_artikel_all();
 
         $data = [
             'artikel' => $artikel
         ];
 
-        return view('artikel/admin/daftar_artikel', $data);
+        return view('admin/artikel/daftar_artikel', $data);
     }
 
     public function add_article()
@@ -43,7 +43,7 @@ class ArtikelController extends BaseController
         ];
         $data['case'] = "tambah";
 
-        return view('artikel/admin/tambah_artikel', $data);
+        return view('admin/artikel/tambah_artikel', $data);
     }
 
     public function input_article()
@@ -117,7 +117,7 @@ class ArtikelController extends BaseController
         $data['kategori'] = $this->kategoriModel->findAll();
         $data['case'] = "edit";
 
-        return view('artikel/admin/tambah_artikel', $data);
+        return view('admin/artikel/tambah_artikel', $data);
     }
 
     // public function update_article($id)
