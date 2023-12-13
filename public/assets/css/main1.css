@@ -5085,3 +5085,49 @@ footer {
 .tracking_ticket .footer-bottom{
     border-top:none;
 } */
+
+.tracking_ticket_detail li{
+    border: none;
+    padding: 5px;
+}
+
+.tracking_ticket_detail .d-lg .Ljdl1{
+    padding-top: 25px;
+    width: 85%;
+}
+
+.tracking_ticket_detail .d-lg .Ljdl{
+    width: 25%;
+}
+
+.tracking_ticket_detail .d-lg .Lisi{
+    width: 70%;
+}
+
+.tracking_ticket_detail .d-sm{
+    display: none;
+}
+
+@media (max-width: 575px) {
+    .tracking_ticket_detail .d-lg{
+        display: none;
+    }
+    .tracking_ticket_detail .d-sm{
+        display: block;
+    }
+
+    .tracking_ticket_detail .d-sm .Ljdl{
+        width: 35%;
+    }
+    
+    .tracking_ticket_detail .d-sm .Lisi{
+        width: 60%;
+    }
+
+    .tracking_ticket_detail .d-sm ul{
+        padding-top: 15px;
+    }
+}
+/* .tracking_ticket_detail .Ltitik2{
+    width: 1%;
+} */

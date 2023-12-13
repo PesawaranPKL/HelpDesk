@@ -8,4 +8,9 @@ class TicketController extends BaseController
     {
         return view('tracking_ticket');
     }
+
+    public function detail_ticket(): string
+    {
+        return view('tracking_ticket_detail');
+    }
 }
