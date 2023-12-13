@@ -57,6 +57,23 @@ $routes->group('dashboard', static function ($routes) {
 
         /* ====================================== PENGADUAN ADMIN ================================================== */
         $routes->get('daftar_pengaduan', 'PengaduanController::index', ['namespace' => '\App\Controllers\Admin']);
+
+        $routes->group('daftar_pengaduan', static function ($routes) {
+            $routes->get('proses/(:segment)', 'PengaduanController::proses/$1', ['namespace' => '\App\Controllers\Admin']);
+            $routes->post('selesai/(:segment)', 'PengaduanController::selesai/$1', ['namespace' => '\App\Controllers\Admin']);
+            // $routes->post('tambah', 'ArtikelController::input_article', ['namespace' => '\App\Controllers\Admin']);
+
+            // $routes->get('details/(:segment)', 'ArtikelController::data/$1', ['namespace' => '\App\Controllers\Admin']);
+            // $routes->get('edit/(:segment)', 'ArtikelController::edit_article/$1', ['namespace' => '\App\Controllers\Admin']);
+            // $routes->post('edit/(:segment)', 'ArtikelController::update_article/$1', ['namespace' => '\App\Controllers\Admin']);
+            // $routes->get('hapus/(:segment)', 'ArtikelController::delete_article/$1', ['namespace' => '\App\Controllers\Admin']);
+
+        });
+
+        $routes->get('list_pengaduan/(:segment)', 'PengaduanController::list_pengaduan/$1', ['namespace' => '\App\Controllers\Admin']);
+
+        $routes->get('detail_pengaduan/(:segment)', 'PengaduanController::detail_pengaduan/$1', ['namespace' => '\App\Controllers\Admin']);
+
         $routes->get('detail_pengaduan=belum_diproses', 'PengaduanController::detail_proses', ['namespace' => '\App\Controllers\Admin']);
         $routes->get('detail_pengaduan=sedang_diproses', 'PengaduanController::detail_solusi', ['namespace' => '\App\Controllers\Admin']);
         $routes->get('detail_pengaduan=sudah_diproses', 'PengaduanController::detail_selesai', ['namespace' => '\App\Controllers\Admin']);
@@ -68,4 +85,7 @@ $routes->group('dashboard', static function ($routes) {
         //isi route lanjutan
 
     });
+
+    $routes->get('notifikasi/show/(:segment)/(:segment)', 'PengaduanController::notif_show/$1/$2', ['namespace' => '\App\Controllers\Admin']);
+    $routes->get('notifikasi/delete', 'PengaduanController::notif_deleteall', ['namespace' => '\App\Controllers\Admin']);
 });

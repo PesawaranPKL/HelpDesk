@@ -43,19 +43,21 @@ class PengaduanModel extends Model
     public function get_data_pengaduan($id)
     {
         return $this->db->table('pengaduan')
-            ->where('id_kategori', ['id_kategori' => $id])
+            ->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori')
+            ->where('pengaduan.id_kategori', ['pengaduan.id_kategori' => $id])
             ->get()->getResultArray();
     }
     public function get_one_pengaduan($id)
     {
         return $this->db->table('pengaduan')
+            ->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori')
             ->where('id_pengaduan', ['id_pengaduan' => $id])
             ->get()->getRow();
     }
     public function get_status_pengaduan($token)
     {
         return $this->db->table('pengaduan')
-            ->join('kategori', 'kategori.id_kategori = kategori.id_kategori')
+            ->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori')
             ->where('token_pengaduan', ['token_pengaduan' => $token])
             ->get()->getRow();
     }
