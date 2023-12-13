@@ -12,6 +12,8 @@ $routes->get('/', 'Home::index');
 $routes->get('pengaduan', 'PengaduanController::index');
 $routes->post('pengaduan', 'PengaduanController::tambah_pengaduan');
 
+// tracking ticket
+$routes->get('tracking_ticket', 'TicketController::index');
 
 $routes->get('/login_sistem', 'Auth::index');
 $routes->get('/registrasi', 'Auth::regis');
