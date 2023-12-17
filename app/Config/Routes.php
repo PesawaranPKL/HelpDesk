@@ -43,12 +43,10 @@ $routes->group('dashboard', static function ($routes) {
             $routes->get('tambah', 'ArtikelController::add_article', ['namespace' => '\App\Controllers\Admin']);
             $routes->post('tambah', 'ArtikelController::input_article', ['namespace' => '\App\Controllers\Admin']);
 
-            // $routes->get('details/(:segment)', 'ArtikelController::article_details/$1', ['namespace' => '\App\Controllers\Admin' ]);
-
+            $routes->get('details/(:segment)', 'ArtikelController::data/$1', ['namespace' => '\App\Controllers\Admin']);
             $routes->get('edit/(:segment)', 'ArtikelController::edit_article/$1', ['namespace' => '\App\Controllers\Admin']);
             $routes->post('edit/(:segment)', 'ArtikelController::update_article/$1', ['namespace' => '\App\Controllers\Admin']);
             $routes->get('hapus/(:segment)', 'ArtikelController::delete_article/$1', ['namespace' => '\App\Controllers\Admin']);
-
         });
         /* ====================================== FAQ ADMIN ================================================== */
         $routes->get('faq', 'FaqController::index', ['namespace' => '\App\Controllers\Admin']);
@@ -64,6 +62,12 @@ $routes->group('dashboard', static function ($routes) {
 
         // });
     });
+        /* ====================================== PENGADUAN ADMIN ================================================== */
+        $routes->get('daftar_pengaduan', 'PengaduanController::index', ['namespace' => '\App\Controllers\Admin']);
+        $routes->get('detail_pengaduan=belum_diproses', 'PengaduanController::detail_proses', ['namespace' => '\App\Controllers\Admin']);
+        $routes->get('detail_pengaduan=sedang_diproses', 'PengaduanController::detail_solusi', ['namespace' => '\App\Controllers\Admin']);
+        $routes->get('detail_pengaduan=sudah_diproses', 'PengaduanController::detail_selesai', ['namespace' => '\App\Controllers\Admin']);
+    });
 
     /* ====================================== Operator ================================================== */
     $routes->get('operator', 'DashboardController::index', ['namespace' => '\App\Controllers\Operator']);
@@ -71,3 +75,4 @@ $routes->group('dashboard', static function ($routes) {
         //isi route lanjutan
 
     });
+});
