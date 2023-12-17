@@ -247,8 +247,7 @@
 							<span class="nav-text">FAQ</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="#">Buat FAQ</a></li>
-							<li><a href="#">List FAQ</a></li>
+							<li><a href="<?php base_url() ?>/dashboard/admin/faq">Daftar FAQ</a></li>
 						</ul>
 					</li>
 				</ul>
