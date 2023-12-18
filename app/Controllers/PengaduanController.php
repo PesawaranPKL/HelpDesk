@@ -75,15 +75,16 @@ class PengaduanController extends BaseController
                 'errors' => [
                     'required' => 'Deksripsi harus di isi!'
                 ]
-            ],
-            'file_pendukung' => [
-                'rules' => 'uploaded[file_pendukung]|mime_in[file_pendukung,application/pdf]|max_size[file_pendukung,2048]',
-                'errors' => [
-                    'uploaded' => 'Pilih file terlebih dahulu',
-                    'mime_in' => 'Masukkan file pdf',
-                    'max_size' => 'Masukkan ukuran file paling besar 2 mb',
-                ]
             ]
+            // ,
+            // 'file_pendukung' => [
+            //     'rules' => 'uploaded[file_pendukung]|mime_in[file_pendukung,application/pdf]|max_size[file_pendukung,2048]',
+            //     'errors' => [
+            //         'uploaded' => 'Pilih file terlebih dahulu',
+            //         'mime_in' => 'Masukkan file pdf',
+            //         'max_size' => 'Masukkan ukuran file paling besar 2 mb',
+            //     ]
+            // ]
         ];
 
         if (!$this->validate($rules)) {
