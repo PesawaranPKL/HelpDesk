@@ -20,11 +20,12 @@ class Notifikasi extends Migration
 				'constraint'     => 10,
 				'unsigned'       => true
 			],
-            'waktu_baca_admin'=> [
-				'type'           => 'DATETIME',
-                'null'           => true
+            'id_user'   => [
+				'type'           => 'INT',
+				'constraint'     => 10,
+				'unsigned'       => true
 			],
-			'waktu_baca_operator'=> [
+            'waktu_baca'=> [
 				'type'           => 'DATETIME',
                 'null'           => true
 			],
