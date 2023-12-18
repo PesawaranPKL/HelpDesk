@@ -176,19 +176,29 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-					<li class="has-menu"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Artikel</span>
 						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="<?php base_url() ?>/dashboard/admin/artikel">Daftar Artikel</a></li>
+                            <li><a href="#">Nama Sidebar 1</a></li>
+                            <li><a href="#">Nama Sidebar 2</a></li>
+                            <li><a href="#">Nama Sidebar 3</a></li>
+                            <li><a href="#">Nama Sidebar 4</a></li>
+                        </ul>
+                    </li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-help-1"></i>
+							<span class="nav-text">FAQ</span>
+						</a>
 						<ul aria-expanded="false">
-							<li><a href="#">Daftar Artikel</a></li>
-							<li><a href="#">Nama Sidebar 1</a></li>
-							<li><a href="#">Nama Sidebar 2</a></li>
-							<li><a href="#">Nama Sidebar 3</a></li>
-							<li><a href="#">Nama Sidebar 4</a></li>
+							<li><a href="<?php base_url() ?>/dashboard/admin/faq">Daftar FAQ</a></li>
 						</ul>
 					</li>
-					<li><a href="<?php base_url() ?>/dashboard/admin/daftar_pengaduan" class="ai-icon" aria-expanded="false">
+                    <li><a href="<?php base_url()?>/dashboard/admin/daftar_pengaduan" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-incoming-call"></i>
 							<span class="nav-text">Daftar Pengaduan</span>
 						</a>
@@ -215,6 +225,8 @@
 	<script src="<?php base_url() ?>/assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="<?php base_url() ?>/assets/admin/vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="<?php base_url() ?>/assets/admin/vendor/owl-carousel/owl.carousel.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/vendor/ckeditor/ckeditor.js"></script>
+
 
 	<!-- Chart piety plugin files -->
 	<script src="<?php base_url() ?>/assets/admin/vendor/peity/jquery.peity.min.js"></script>

@@ -42,23 +42,28 @@ class Pengaduan extends Migration
                 'constraint'     => 20,
 				'null'           => true
 			],
-			'kategori'      => [
-				'type'           => 'VARCHAR',
-				'constraint'     => 30
-			],
             'deskripsi'     => [
 				'type'           => 'TEXT',
 				'null'           => true
 			],
             'file_pendukung'=> [
 				'type'           => 'VARCHAR',
-                'constraint'     => 100
+                'constraint'     => 160
 			],
-            'status'        => [
-                'type'           => 'ENUM',
-                'constraint'     => ['belum selesai', 'dalam proses', 'selesai', 'ditolak'],
-                'default'        => 'dalam proses'
-            ],
+            'proses_pengaduan'=> [
+				'type'           => 'DATETIME'
+			],
+			'selesai_pengaduan'=> [
+				'type'           => 'DATETIME'
+			],
+            'pesan_balasan'     => [
+				'type'           => 'TEXT',
+				'null'           => true
+			],
+            'file_balasan'=> [
+				'type'           => 'VARCHAR',
+                'constraint'     => 160
+			],
             'created_at DATETIME DEFAULT CURRENT_TIMESTAMP'            
 		]);
         $this->forge->addKey('id_pengaduan', true);

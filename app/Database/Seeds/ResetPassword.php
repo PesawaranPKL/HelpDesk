@@ -11,8 +11,8 @@ class ResetPassword extends Seeder
 		$reset_password_data = [
 			[
                 'email_user'       => 'user01@gmail.com',
-                'token'		       => 'wNJmFeNhDpsdNZbOT7XbPITp9ZNdAIQfHesiKI4Dkh6mf9MCyFwaQVk1IKPIMXpqRztD2xPiYTOBBNxOFsDGnGz8tblfxuSwFQ6u',
-				'waktu'            => '2038-01-19 03:14:07',
+                'token'		       => 'https://tokenamambdjabdjbdja',
+				'waktu'            => '2023-10-11 03:14:07',
 			],
 		];
 

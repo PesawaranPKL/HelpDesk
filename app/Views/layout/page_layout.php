@@ -49,7 +49,7 @@
                 </div>
                 <ul class="menu">
                     <li>
-                        <a href="#">Cek Status Tiket</a>
+                        <a href="<?php base_url()?>/tracking_ticket">Cek Status Tiket</a>
                     </li>
                     <li>
                         <a href="#">Artikel</a>
@@ -80,7 +80,7 @@
     <footer class="footer-section">
         <div class="dot-slider bg_img" data-background="<?= base_url() ?>/assets/css/img/footer-dots.png"></div>
         <div class="container">
-            <div class="footer-bottom cl-white">
+            <div class="footer-bottom cl-white" style="border-top:none;">
                 <p>Copyright &copy; 2023 <a href="#0">Helpdesk</a> - Develop by <a href="#0">Syntax Scrumptious</a></p>
             </div>
         </div>

@@ -46,7 +46,7 @@
                 <div class="logo-area">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="logo">
+                            <img src="<?php base_url() ?>/assets/images/logo/logo.png" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
 
 
     <!--============= Banner Section Starts Here =============-->
-    <div class="hero-section bg_img" data-background="assets/images/banner/page-header.jpg">
+    <div class="hero-section bg_img" data-background="<?= base_url() ?>/assets/images/banner/page-header.jpg">
         <div class="container">
             <div class="banner-content cl-white">
                 <ul class="breadcrumb">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <div class="right-thumb d-none d-lg-block">
-                        <img src="assets/images/faq/have-questions.png" alt="faq">
+                        <img src="<?= base_url() ?>/assets/images/faq/have-questions.png" alt="faq">
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                         <div class="footer-widget widget-about">
                             <div class="logo-area">
                                 <div class="logo">
-                                    <a href="#"><img src="assets/images/logo/logo.png" alt="logo"></a>
+                                    <a href="#"><img src="<?= base_url() ?>/assets/images/logo/logo.png" alt="logo"></a>
                                 </div>
                             </div>
                             <p>Komplek Perkantoran Pemerintah Kabupaten Pesawaran Jl. Raya Kedondong, Way Layap Kec. Gedong Tataan Kabupaten Pesawaran, Provinsi Lampung Indonesia Kode Pos 35371 Tel – (0721) 8032018 Fax – (0721) 8032018</p>
