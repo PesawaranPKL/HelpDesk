@@ -13,19 +13,19 @@
 	<meta property="og:description" content="Jobie : Job Portal  Admin  Bootstrap 5 Template">
 	<meta property="og:image" content="https://jobie.dexignzone.com/xhtml/social-image.png">
 	<meta name="format-detection" content="telephone=no">
-    <title>Dashboard Admin Helpdesk</title>
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo1.png" type="image/x-icon">
-    <link href="<?php base_url()?>/assets/admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="<?php base_url()?>/assets/admin/vendor/chartist/css/chartist.min.css">
+	<title>Dashboard Admin Helpdesk</title>
+	<!-- Favicon icon -->
+	<link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo1.png" type="image/x-icon">
+	<link href="<?php base_url() ?>/assets/admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php base_url() ?>/assets/admin/vendor/chartist/css/chartist.min.css">
 	<!-- Datatable -->
-	<link rel="stylesheet" href="<?php base_url()?>assets/admin/vendor/datatables/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="<?php base_url() ?>assets/admin/vendor/datatables/css/jquery.dataTables.min.css">
 	<!-- Custom Stylesheet -->
-    <link href="<?php base_url()?>/assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	<link href="<?php base_url()?>/assets/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
-	<link href="<?php base_url()?>/assets/admin/vendor/LineIcons.css" rel="stylesheet">
-    <link href="<?php base_url()?>/assets/admin/css/style.css" rel="stylesheet">
-	<link href="<?php base_url()?>/assets/admin/vendor/dropzone/dist/dropzone.css" rel="stylesheet">
+	<link href="<?php base_url() ?>/assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="<?php base_url() ?>/assets/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+	<link href="<?php base_url() ?>/assets/admin/vendor/LineIcons.css" rel="stylesheet">
+	<link href="<?php base_url() ?>/assets/admin/css/style.css" rel="stylesheet">
+	<link href="<?php base_url() ?>/assets/admin/vendor/dropzone/dist/dropzone.css" rel="stylesheet">
 
 </head>
 
@@ -98,80 +98,29 @@
 										<path d="M9.45251 25.6682C10.0606 27.0357 11.4091 28 13.0006 28C14.5922 28 15.9407 27.0357 16.5488 25.6682C15.4266 25.7231 14.2596 25.76 13.0006 25.76C11.7418 25.76 10.5748 25.7231 9.45251 25.6682Z" fill="#3E4954"></path>
 										<path d="M25.3531 19.74C23.8769 17.8785 21.3995 14.2195 21.3995 10.64C21.3995 7.09073 19.1192 3.89758 15.7995 2.72382C15.7592 1.21406 14.5183 0 13.0006 0C11.4819 0 10.2421 1.21406 10.2017 2.72382C6.88095 3.89758 4.60064 7.09073 4.60064 10.64C4.60064 14.2207 2.12434 17.8785 0.647062 19.74C0.154273 20.3616 0.00191325 21.1825 0.240515 21.9363C0.473484 22.6721 1.05361 23.2422 1.79282 23.4595C3.08755 23.8415 5.20991 24.2715 8.44676 24.491C9.84785 24.5851 11.3543 24.64 13.0007 24.64C14.646 24.64 16.1524 24.5851 17.5535 24.491C20.7914 24.2715 22.9127 23.8415 24.2085 23.4595C24.9477 23.2422 25.5268 22.6722 25.7597 21.9363C25.9983 21.1825 25.8448 20.3616 25.3531 19.74Z" fill="#3E4954"></path>
 									</svg>
-									<span class="badge light text-white bg-primary rounded-circle">52</span>
+									<span class="badge light text-white bg-primary rounded-circle"><?= count($notif) ?></span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<div id="DZ_W_Notification1" class="widget-media dz-scroll p-3 height380">
 										<ul class="timeline">
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2">
-														<img alt="image" width="50" src="images/avatar/1.jpg">
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Dr sultads Send you Photo</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-info">
-														KG
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Resport created successfully</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-success">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2">
-														<img alt="image" width="50" src="<?php base_url() ?>/assets/admin/images/avatar/1.jpg">
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Dr sultads Send you Photo</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-danger">
-														KG
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Resport created successfully</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-primary">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
+											<?php foreach ($notif as $key) : ?>
+												<li>
+													<a href="<?php base_url() ?>/dashboard/notifikasi/show/<?= base64_encode(base64_encode($key['id_notifikasi'])) ?>/<?= base64_encode(base64_encode($key['id_pengaduan'])) ?>">
+														<div class="timeline-panel">
+															<div class="media me-2 media-info">
+																<i class="ti-info"></i>
+															</div>
+															<div class="media-body">
+																<h6 class="mb-1"><?= $key['nama_pengadu']; ?></h6>
+																<small class="d-block"><?= strftime('%A, %d %B %Y', strtotime($key['notifikasi_create'])); ?> | <?= strftime('Pukul %H : %M %p', strtotime($key['notifikasi_create'])); ?></small>
+															</div>
+														</div>
+													</a>
+												</li>
+											<?php endforeach; ?>
 										</ul>
 									</div>
-									<a class="all-notification" href="#">See all notifications <i class="ti-arrow-right"></i></a>
+									<a class="all-notification" href="<?= base_url('dashboard/notifikasi/delete'); ?>">Delete all notifications <i class="ti-arrow-right"></i></a>
 								</div>
 							</li>
 							<li class="nav-item dropdown header-profile">
@@ -222,7 +171,7 @@
 		<div class="deznav">
 			<div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-				<a href="<?php base_url() ?>/dashboard" class="ai-icon" aria-expanded="false">
+					<li><a href="<?php base_url() ?>/dashboard" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
@@ -255,14 +204,14 @@
 							<span class="nav-text">Daftar Pengaduan</span>
 						</a>
 					</li>
-                </ul>
+				</ul>
 			</div>
 		</div>
 		<!--**********************************
             Sidebar end
         ***********************************-->
 
-        <?= $this->renderSection('content') ?>
+		<?= $this->renderSection('content') ?>
 
 	</div>
 	<!--**********************************
@@ -284,18 +233,18 @@
 	<script src="<?php base_url() ?>/assets/admin/vendor/peity/jquery.peity.min.js"></script>
 
 	<!-- Dashboard 1 -->
-	<script src="<?php base_url()?>/assets/admin/js/dashboard/dashboard-1.js"></script>
-	
-	<script src="<?php base_url()?>/assets/admin/vendor/dropzone/dist/dropzone.js"></script>
-    <script src="<?php base_url()?>/assets/admin/js/custom.min.js"></script>
-	<script src="<?php base_url()?>/assets/admin/js/deznav-init.js"></script>
-	<script src="<?php base_url()?>/assets/admin/js/demo.js"></script>
-    <script src="<?php base_url()?>/assets/admin/js/styleSwitcher.js"></script>
-	
+	<script src="<?php base_url() ?>/assets/admin/js/dashboard/dashboard-1.js"></script>
+
+	<script src="<?php base_url() ?>/assets/admin/vendor/dropzone/dist/dropzone.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/js/custom.min.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/js/deznav-init.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/js/demo.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/js/styleSwitcher.js"></script>
+
 	<!-- Datatable -->
-    <script src="<?php base_url()?>/assets/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="<?php base_url()?>/assets/admin/js/plugins-init/datatables.init.js"></script>
-	
+	<script src="<?php base_url() ?>/assets/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="<?php base_url() ?>/assets/admin/js/plugins-init/datatables.init.js"></script>
+
 	<script>
 		function carouselReview() {
 			/*  testimonial one function by = owl.carousel.js */

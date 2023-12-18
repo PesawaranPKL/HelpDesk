@@ -40,23 +40,26 @@ class NotifikasiModel extends Model
     protected $beforeDelete         = [];
     protected $afterDelete          = [];
 
-    public function get_notifikasi_belum_dibaca_admin()
+    public function get_notifikasi_belum_dibaca()
     {
         return $this->db->table('notifikasi')
+            ->select('notifikasi.created_at as notifikasi_create, notifikasi.*, pengaduan.*, kategori.*')
             ->join('pengaduan', 'pengaduan.id_pengaduan = notifikasi.id_pengaduan')
             ->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori')
-            ->where('waktu_baca_admin', null)
-            ->get()->getResultArray();
+            ->where('notifikasi.id_user', session()->get('id_user'))
+            ->where('waktu_baca', null)
+            ->get()
+            ->getResultArray();
     }
 
-    public function get_notifikasi_belum_dibaca_operator()
-    {
-        return $this->db->table('notifikasi')
-            ->join('pengaduan', 'pengaduan.id_pengaduan = notifikasi.id_pengaduan')
-            ->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori')
-            ->where('waktu_baca_operator', null)
-            ->get()->getResultArray();
-    }
+    // public function get_notifikasi_belum_dibaca_operator()
+    // {
+    //     return $this->db->table('notifikasi')
+    //         ->join('pengaduan', 'pengaduan.id_pengaduan = notifikasi.id_pengaduan')
+    //         ->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori')
+    //         ->where('waktu_baca_operator', null)
+    //         ->get()->getResultArray();
+    // }
 
     public function get_one_notif($id)
     {
@@ -73,10 +76,12 @@ class NotifikasiModel extends Model
             ->update($dataupdate, ['id_notifikasi' => $id]);
     }
 
-    public function hapus_semua_notif_admin($dataupdate)
+    public function hapus_semua_notif($dataupdate)
     {
         return $this->db->table('notifikasi')
-            ->update($dataupdate, ['waktu_baca_admin' => null]);
+            ->where('id_user', session()->get('id_user'))
+            ->where('waktu_baca', null)
+            ->update($dataupdate);
     }
 
     public function hapus_semua_notif_operator($dataupdate)

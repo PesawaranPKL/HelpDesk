@@ -102,7 +102,7 @@ class PengaduanController extends BaseController
         // $randomName = $file->getRandomName();
         $token = $this->create_token();
 
-        $fileupload = uploadFile('file_pendukung', 'public/dokumen/pengaduan');
+        $fileupload = uploadFile('file_pendukung', 'dokumen/pengaduan');
 
         // menyimpan data dari form ke dalam database tabel ajuan beasiswa
         $this->pengaduanModel = new PengaduanModel();
