@@ -32,6 +32,8 @@ $routes->group('artikel', static function ($routes) {
 
 
 $routes->get('/ganti_email', 'Auth::ganti_email');
+$routes->get('/hirarki', 'ChatBotController::hirarki', ['namespace' => '\App\Controllers\Admin']);
+
 
 
 
@@ -64,6 +66,12 @@ $routes->group('dashboard', static function ($routes) {
         $routes->get('detail_pengaduan=belum_diproses', 'PengaduanController::detail_proses', ['namespace' => '\App\Controllers\Admin']);
         $routes->get('detail_pengaduan=sedang_diproses', 'PengaduanController::detail_solusi', ['namespace' => '\App\Controllers\Admin']);
         $routes->get('detail_pengaduan=sudah_diproses', 'PengaduanController::detail_selesai', ['namespace' => '\App\Controllers\Admin']);
+
+        $routes->get('chatbot', 'ChatBotController::index', ['namespace' => '\App\Controllers\Admin']);
+        $routes->group('chatbot', static function ($routes) {
+            $routes->get('tambah', 'ChatBotController::add', ['namespace' => '\App\Controllers\Admin']);
+            $routes->post('tambah', 'ChatBotController::validasi_add', ['namespace' => '\App\Controllers\Admin']);
+        });
     });
 
     /* ====================================== Operator ================================================== */
