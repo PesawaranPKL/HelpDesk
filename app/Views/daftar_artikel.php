@@ -7,12 +7,21 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="search-wrapper mt--55--70">
+                <!-- <div class="search-wrapper mt--55--70">
                     <form class="search-form round no-border mw-925">
                         <input type="text" placeholder="Cari judul artikel...">
                         <button type="submit"><i class="flaticon-search"></i> <span class="d-none d-sm-inline-block">Cari</span></button>
                     </form>
+                </div> -->
+
+                <div class="search-wrapper mt--55--70">
+                    <form class="search-form round no-border mw-925" action="<?= base_url('artikel'); ?>" method="get">
+                        <input type="text" name="keyword" placeholder="Cari judul artikel..." value="<?= service('request')->getGet('keyword'); ?>">
+                        <button type="submit"><i class="flaticon-search"></i> <span class="d-none d-sm-inline-block">Cari</span></button>
+                    </form>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -27,12 +36,12 @@
             <?php foreach ($artikel as $a) : ?>
                 <div class="col-lg-12 col-xl-3">
                     <div class="card">
-                        <img src="<?php base_url() ?>/assets/artikel/thumbnails/<?= $artikel['thumbnail']; ?>" alt="Thumbnail">
+                        <img src="<?= base_url() ?>file_upload/artikel/tumbnails/<?= $a['thumbnail']; ?>" alt="Thumbnail">
                         <div class="card-body">
-                            <a href="<?php base_url() ?>/dashboard/admin/artikel/details/<?= $a['id_artikel']; ?>" class="popular-item px-2 position-relative">
+                            <a href="<?php base_url() ?>/artikel/detail/<?= $a['id_artikel']; ?>" target="_blank" class="popular-item px-2 position-relative">
                                 <div class="popular-content pl-2">
-                                    <span class="info"><?= $a['kategori']; ?></span>
                                     <p><?= $a['judul_artikel']; ?></p>
+                                    <span class="info"><?= $a['kategori']; ?></span>
                                 </div>
                             </a>
                         </div>
@@ -40,6 +49,14 @@
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <!-- Pagination Links -->
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <?= $pager->links() ?>
+            </div>
+        </div>
+
     </div>
 </section>
 <!--============= Articles Section Ends Here =============-->

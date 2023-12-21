@@ -25,7 +25,7 @@
                 <div class="col-lg-12 col-xl-3">
                     <div class="card">
                         <div class="img-holder">
-                            <img class="card-img-top img-fluid" src="<?php base_url() ?>/file_upload/artikel/thumbnails/<?= $a['thumbnail']; ?>" alt="Thumbnail">
+                            <img class="card-img-top img-fluid" src="<?= base_url() ?>file_upload/artikel/tumbnails/<?= $a['thumbnail']; ?>" alt="Thumbnail">
                             <a class="link" href="#" role="button" data-bs-toggle="dropdown"><i class="bi bi-chevron-down"></i></a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="<?php base_url() ?>/dashboard/admin/artikel/edit/<?= base64_encode(base64_encode($a['id_artikel'])) ?>" class="dropdown-item">
@@ -62,6 +62,8 @@
                 </div>
             <?php endforeach; ?>
         </div>
+
+
 
     </div>
 </div>

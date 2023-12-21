@@ -18,7 +18,7 @@
 
                     <div class="know-single-item">
                         <div class="video-wrapper">
-                            <img src="<?php base_url() ?>/assets/artikel/thumbnails/<?= $artikel['thumbnail']; ?>" alt="Thumbnail">
+                            <img src="<?= base_url() ?>file_upload/artikel/tumbnails/<?= $artikel['thumbnail']; ?>" alt="Thumbnail">
                         </div>
                         <p><?= $artikel['isi_artikel']; ?></p>
                     </div>

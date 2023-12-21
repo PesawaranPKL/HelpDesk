@@ -46,7 +46,7 @@
                 <div class="logo-area">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="<?php base_url() ?>/assets/images/logo/logo.png" alt="logo">
+                            <img src="<?php base_url() ?>/assets/images/logo/logo-B4.png" alt="Logo Helpdesk">
                         </a>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                         <div class="footer-widget widget-about">
                             <div class="logo-area">
                                 <div class="logo">
-                                    <a href="#"><img src="<?= base_url() ?>/assets/images/logo/logo.png" alt="logo"></a>
+                                    <a href="#"><img src="<?= base_url() ?>/assets/images/logo/logo-B3.png" alt="logo"></a>
                                 </div>
                             </div>
                             <p>Komplek Perkantoran Pemerintah Kabupaten Pesawaran Jl. Raya Kedondong, Way Layap Kec. Gedong Tataan Kabupaten Pesawaran, Provinsi Lampung Indonesia Kode Pos 35371 Tel – (0721) 8032018 Fax – (0721) 8032018</p>

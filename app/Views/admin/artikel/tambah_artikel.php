@@ -71,7 +71,7 @@
                     <label class="col-sm-3 col-form-label"><strong>Artikel Thumbnail</strong></label>
                     <div class="col-sm-9">
                       <input class="form-control" type="file" id="thumbnail" name="thumbnail" required>
-                      <div class="d-flex justify-content-center my-2">
+                      <div class="d-flex justify-content-center my-2" id="thumbnailContainer" style="visibility: hidden;">
                         <img src="" id="perview_thumbnail" alt="Thumbnail" width="70%" height="50%">
                       </div>
                     </div>
@@ -80,8 +80,6 @@
                     <label class="col-sm-3 col-form-label"><strong>Isi Artikel</strong></label>
                     <div class="col-sm-9">
                       <textarea name="isi_artikel" id="ckeditor"></textarea>
-                      <!-- <script>
-                      </script> -->
                     </div>
                   </div>
                   <div class="row col-xl-12 col-xxl-6 float-end">
@@ -168,7 +166,7 @@
                     <label class="col-sm-3 col-form-label"><strong>Artikel Thumbnail</strong></label>
                     <div class="col-sm-9">
                       <input class="form-control" type="file" accept=".png, .jpg, .jpeg" id="thumbnail" name="thumbnail">
-                      <div class="d-flex justify-content-center my-2">
+                      <div class="d-flex justify-content-center my-2" id="thumbnailContainer" style="visibility: hidden;">
                         <img src="" id="perview_thumbnail" alt="Thumbnail" width="70%" height="50%">
                       </div>
                     </div>
@@ -195,7 +193,7 @@
         </div>
       </div>
     <?php } ?>
-    
+
   </div>
 </div>
 
@@ -309,6 +307,7 @@
 <script>
   function previewThumbnail() {
     const thumbnailInput = document.getElementById("thumbnail");
+    const thumbnailContainer = document.getElementById("thumbnailContainer");
     const perviewThumbnail = document.getElementById("perview_thumbnail");
 
     const fileThumbnail = new FileReader();
@@ -316,7 +315,15 @@
     fileThumbnail.readAsDataURL(thumbnailInput.files[0]);
 
     fileThumbnail.onload = function(e) {
-      perviewThumbnail.src = e.target.result;
+      const imageSrc = e.target.result;
+
+      if (imageSrc) {
+        perviewThumbnail.src = imageSrc;
+        thumbnailContainer.style.visibility = "visible"; // menampilkaan container div image
+      } else {
+        perviewThumbnail.src = "";
+        thumbnailContainer.style.visibility = "hidden"; // menyembunyikan container div image
+      }
     };
   }
 
