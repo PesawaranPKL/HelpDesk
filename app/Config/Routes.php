@@ -32,7 +32,11 @@ $routes->group('artikel', static function ($routes) {
 
 
 $routes->get('/ganti_email', 'Auth::ganti_email');
+$routes->get('/chatbot_box', 'ChatBotController::index');
+$routes->post('/chatbot_box', 'ChatBotController::json_parent');
+$routes->post('/chilchatbot_box/(:num)', 'ChatBotController::json_chill/$1');
 $routes->get('/hirarki', 'ChatBotController::hirarki', ['namespace' => '\App\Controllers\Admin']);
+
 
 
 

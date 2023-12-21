@@ -44,6 +44,11 @@ class ChatBotModel extends Model
         return $this->where('id_anak_chat', $id_induk)->findAll();
     }
 
+    public function parent_bot()
+    {
+        return $this->select('name_chat, id_chat')->where('id_anak_chat', null)->findAll();
+        
+    }
 
     // ini dibawah untuk tabel yang info keturunan siapa( belum bisa)
     public function gethirarki_info_induk($id_induk)
@@ -52,7 +57,7 @@ class ChatBotModel extends Model
 
         foreach ($result as &$item) {
             $item['is_child'] = $this->isChild($item['id_chat']);
-            $item['children'] = $this->gethirarki_info_induk($item['id_chat']);
+            $item['children'] = $this->gethirarki_info_induk($item['id_anak_chat']);
         }
 
         return $result;
