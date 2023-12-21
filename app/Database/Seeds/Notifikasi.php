@@ -4,14 +4,13 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class Notofikasi extends Seeder
+class Notifikasi extends Seeder
 {
     public function run()
 	{
 		$notifikasi_data = [
 			[
-                'id_pengaduan'  => 1,
-				'id_user'  => 1
+                'id_pengaduan'  => 1
 			],
 		];
 
