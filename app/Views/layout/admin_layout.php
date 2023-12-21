@@ -197,7 +197,12 @@
 							<span class="nav-text">Daftar Pengaduan</span>
 						</a>
 					</li>
-				</ul>
+					<li><a href="<?php base_url()?>/dashboard/admin/chatbot" class="ai-icon" aria-expanded="false">
+							<i class="fa fa-comments"></i>
+							<span class="nav-text">Chat Bot</span>
+						</a>
+					</li>
+                </ul>
 			</div>
 		</div>
 		<!--**********************************
@@ -235,9 +240,12 @@
 	<script src="<?php base_url() ?>/assets/admin/js/styleSwitcher.js"></script>
 
 	<!-- Datatable -->
-	<script src="<?php base_url() ?>/assets/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="<?php base_url() ?>/assets/admin/js/plugins-init/datatables.init.js"></script>
+    <script src="<?php base_url()?>/assets/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php base_url()?>/assets/admin/js/plugins-init/datatables.init.js"></script>
 
+	<?= $this->renderSection('script') ?>
+	
+	
 	<script>
 		function carouselReview() {
 			/*  testimonial one function by = owl.carousel.js */

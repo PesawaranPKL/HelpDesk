@@ -19,20 +19,11 @@
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo1.png" type="image/x-icon">
+    <!-- Library Emoticon -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"> -->
 </head>
 
 <body>
-    <!--============= ScrollToTop Section Starts Here =============-->
-    <div class="overlayer" id="overlayer">
-        <div class="loader">
-            <div class="loader-inner"></div>
-        </div>
-    </div>
-    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
-    <div class="overlay"></div>
-    <!--============= ScrollToTop Section Ends Here =============-->
-
-
     <!--============= Header Section Starts Here =============-->
     <header class="header-section">
         <div class="container">
@@ -74,6 +65,49 @@
     </header>
     <!--============= Header Section Ends Here =============-->
 
+    <!--============= Chatbot Section Starts Here =============-->
+    <section class="chatbot">
+        <button class="chat-btn"> 
+            <div class="badge">2</div>
+            <iconify-icon icon="humbleicons:chat"></iconify-icon>
+        </button>
+
+        <div class="chat-popup">
+            <div class="chat-area">
+             <div class="income-msg">
+                 <img src="<?= base_url()?>assets/images/team/team1.png" class="avatar" alt="">
+                 <span class="msg"> Hi, Ada yang Bisa Kami Bantu?
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action">Jaringan</button>
+                        <button type="button" class="list-group-item list-group-item-action">Domain</button>
+                        <button type="button" class="list-group-item list-group-item-action">Sub Domain</button>
+                    </div>
+                 </span>
+             </div>   
+             <div class="out-msg">
+                <span class="my-msg">Jaringan</span>
+                <img src="<?= base_url()?>assets/images/team/team2.png" class="avatar">
+            </div>
+             <div class="income-msg">
+                 <img src="<?= base_url()?>assets/images/team/team1.png" class="avatar" alt="">
+                 <span class="msg"> Jaringan Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+             </div>   
+             <div class="out-msg">
+                <span class="my-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, delectus voluptate dolore error labore dolor? Nam illum vitae dolores, quod corporis numquam maxime eaque voluptatum magni blanditiis? Aliquid, perferendis non?</span>
+                <img src="<?= base_url()?>assets/images/team/team2.png" class="avatar">
+            </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text">
+                <button class="submit"> 
+                    <iconify-icon icon="fluent:send-16-filled"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!--============= Chatbot Section Ends Here =============-->
+
     <?= $this->renderSection('content') ?>
 
     <!--============= Footer Section Starts Here =============-->
@@ -97,6 +131,17 @@
     <script src="<?= base_url() ?>/assets/js/owl.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/magnific-popup.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/main.js"></script>
+    <!-- Chat Button Toggler  -->
+    <script>
+        const chatBtn = document.querySelector('.chat-btn');
+        const popup = document.querySelector('.chat-popup');
+
+        chatBtn.addEventListener('click', ()=>{
+            popup.classList.toggle('show');
+        })
+    </script>
+    <!-- Icon -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 
 </html>
