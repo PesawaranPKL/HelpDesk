@@ -13,12 +13,12 @@
     </section>
     <!--============= Banner Section Ends Here =============-->
 
-    
+
     <!--============= How Search Section Starts Here =============-->
     <div class="how-search-section padding-bottom mt--330 mb-100">
         <div class="container">
-            <form  class="search-form">
-                <input type="text" placeholder="Masukkan Token Ticket yang didapatkan di Email">
+            <form class="search-form" data-sb-form-api-token="API_TOKEN" action="<?php base_url() ?>/tracking_ticket_detail" method="get">
+                <input type="text" placeholder="Masukkan Token Ticket yang didapatkan di Email" name="token">
                 <button type="submit"><i class="flaticon-search"></i> <span class="d-none d-sm-inline-block">Cari</span></button>
             </form>
         </div>

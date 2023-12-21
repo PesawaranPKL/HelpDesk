@@ -173,6 +173,44 @@ class PengaduanController extends BaseController
         }
     }
 
+    public function checking()
+    {
+
+        $data = $this->request->getGet();
+        if ($data) {
+
+            if ($data['token'] != NULL) {
+
+                $model = new PengaduanModel();
+                // $datas['hasil'] = true;
+                $datas['pengadu'] = $model->get_status_pengaduan($data['token']);
+
+                if ($datas['pengadu'] == null || $datas['pengadu'] == false) {
+                    $datas['hasil'] = false;
+                } else {
+                    $datas['hasil'] = true;
+                }
+                // var_dump($datas['data_beasiswa']);
+
+            } else {
+
+                $datas['hasil'] = false;
+            }
+            // return view('hasil', $datas);
+            // var_dump($datas);
+
+        } else {
+            $datas['hasil'] = false;
+            // return view('hasil', $datas);
+        }
+
+        $datas['title'] = "Cek Status Pengaduan";
+        $model = new KategoriModel();
+        $datas['kategori'] = $model->get_kategori();
+        return view('Pages/cek_status', $datas);
+    }
+
+
     public function create_token()
     {
         $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
