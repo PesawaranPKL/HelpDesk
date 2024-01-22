@@ -1,7 +1,17 @@
-<?= $this->extend('layout/user_layout') ?>
+<?= $this->extend('layout/page_layout') ?>
 
 <?= $this->section('content') ?>
-
+<div class="hero-section bg_img" data-background="<?= base_url() ?>/assets/images/banner/page-header.jpg">
+    <div class="container">
+        <div class="banner-content cl-white">
+            <ul class="breadcrumb">
+                <li><a href="#0">Beranda</a></li>
+                <li><a href="#0">Dokumentasi</a></li>
+                <li>Artikel</li>
+            </ul>
+        </div>
+    </div>
+</div>
 <!--============= Form Section Starts Here =============-->
 <div class="form-section">
     <div class="container">
@@ -53,7 +63,7 @@
         <!-- Pagination Links -->
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <?= $pager->links() ?>
+                
             </div>
         </div>
 

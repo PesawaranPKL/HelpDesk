@@ -43,7 +43,7 @@
                         <a href="<?php base_url()?>/tracking_ticket">Cek Status Tiket</a>
                     </li>
                     <li>
-                        <a href="#">Artikel</a>
+                        <a href="<?php base_url()?>/artikel">Artikel</a>
                     </li>
                     <li>
                         <a href="#">FAQ</a>

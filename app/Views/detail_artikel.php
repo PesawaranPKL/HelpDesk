@@ -1,7 +1,18 @@
-﻿<?= $this->extend('layout/user_layout') ?>
+﻿<?= $this->extend('layout/page_layout') ?>
 
 <?= $this->section('content') ?>
 
+<div class="hero-section bg_img" data-background="<?= base_url() ?>/assets/images/banner/page-header.jpg">
+    <div class="container">
+        <div class="banner-content cl-white">
+            <ul class="breadcrumb">
+                <li><a href="#0">Beranda</a></li>
+                <li><a href="#0">Dokumentasi</a></li>
+                <li>Artikel</li>
+            </ul>
+        </div>
+    </div>
+</div>
 <!--============= Knowledge Single Section Starts Here =============-->
 <section class="knowledge-single-section padding-bottom padding-top oh">
     <div class="container">
@@ -9,18 +20,18 @@
             <div class="col-xl-8 col-lg-7 mb-70">
                 <div class="knowledge-single">
                     <div class="knowledge-header">
-                        <h2 class="title"><?= $artikel['judul_artikel']; ?></h2>
+                        <h2 class="title"><?= $artikel->judul_artikel ?></h2>
                         <ul class="knowledge-meta">
-                            <li>Created: <?= $artikel['created_at']; ?></li>
-                            <!-- <li>Updated: <?= $artikel['updated_at']; ?></li> -->
+                            <li>Created: <?= $artikel->created_at ?></li>
+                            <!-- <li>Updated: <?= $artikel->updated_at ?></li> -->
                         </ul>
                     </div>
 
                     <div class="know-single-item">
                         <div class="video-wrapper">
-                            <img src="<?= base_url() ?>file_upload/artikel/tumbnails/<?= $artikel['thumbnail']; ?>" alt="Thumbnail">
+                            <img src="<?= base_url() ?>file_upload/artikel/tumbnails/<?= $artikel->thumbnail ?>" alt="Thumbnail">
                         </div>
-                        <p><?= $artikel['isi_artikel']; ?></p>
+                        <p><?= $artikel->isi_artikel ?></p>
                     </div>
                 </div>
             </div>
@@ -36,7 +47,7 @@
                                 </div>
                                 <div class="author-content">
                                     <span class="by">Ditulis Oleh</span>
-                                    <h5 class="subtitle"><?= $artikel['nama']; ?></h5>
+                                    <h5 class="subtitle"><?= $artikel->nama ?></h5>
                                 </div>
                             </div>
                         </div>

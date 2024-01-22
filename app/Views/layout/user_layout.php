@@ -45,38 +45,35 @@
             <div class="header-wrapper">
                 <div class="logo-area">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="<?php base_url() ?>/assets/images/logo/logo-B4.png" alt="Logo Helpdesk">
+                        <a href="<?= base_url() ?>">
+                            <img src="<?php base_url()?>/assets/images/logo/logo_bannerw.png" alt="logo">
                         </a>
+                    </div>
+                    <div class="support">
+                        <a href="<?= base_url() ?>">HelpDesk</a>
                     </div>
                 </div>
                 <ul class="menu">
                     <li>
-                        <a href="#">Beranda</a>
+                        <a href="<?php base_url()?>/tracking_ticket">Cek Status Tiket</a>
                     </li>
                     <li>
-                        <a href="#">Profil</a>
+                        <a href="<?php base_url()?>/artikel">Artikel</a>
                     </li>
                     <li>
-                        <a href="#">Pengaduan</a>
-                    </li>
-                    <li>
-                        <a href="#0">Dokumentasi</a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="<?php base_url() ?>/artikel_user">Artikel</a>
-                            </li>
-                            <li>
-                                <a href="#">FAQ</a>
-                            </li>
-                        </ul>
+                        <a href="#">FAQ</a>
                     </li>
                     <li class="d-md-none text-center">
-                        <a href="#0" class="m-0 header-button">Login</a>
+                        <a href="<?php base_url()?>/pengaduan" class="m-0 header-button">Adukan Sekarang</a>
                     </li>
                 </ul>
+                <div class="header-bar d-lg-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="header-right">
-                    <a href="#0" class="header-button d-none d-md-inline-block">Login</a>
+                    <a href="<?php base_url()?>/pengaduan" class="header-button d-none d-md-inline-block">Adukan Sekarang</a>
                 </div>
             </div>
         </div>
